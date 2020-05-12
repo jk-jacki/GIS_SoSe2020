@@ -1,0 +1,174 @@
+body{
+    margin: 0;
+    width: 800px;
+    background-image: url(bg.png);
+    font-family: sans-serif;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header{
+    background-image: url(header-background2.jpg);
+    border: 5px solid #861922;
+}
+
+.navbar{
+    padding: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav{
+    background-color: #000;
+    width: 300px;
+    border-radius: 10px;
+}
+
+ul{
+    margin: 0;
+    padding: 10px;
+}
+
+li{
+    display: inline;
+    padding-left: 2.5px;
+    padding-right: 2.5px;
+    font-size: 1.2em;
+}
+
+li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+li a:hover{
+    color: #861922;
+}
+
+.aktuelleSeite{
+    color: #861922;
+    font-size: 1.3em;
+}
+
+h1{
+    color: #861922;
+    font-size: 3em;
+    margin: 10px 0;
+}
+
+h3{
+    color: #861922;
+}
+
+b{
+    color: #861922;
+    font-size: 1.2em;
+}
+
+audio{
+    border: 5px solid #861922;
+    border-radius: 30px;
+}
+
+.imgborder{
+    border: 7px solid #861922;
+    border-radius: 30px;
+}
+
+
+.textdecoration{
+    display: flex;
+    justify-content: center;
+}
+
+.paragraph{
+    display: inline;
+    background-color: #000;
+    color: white;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    border: 5px solid #861922;
+}
+
+.textinput{
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    width: 200px;
+    border-radius: 30px;
+    border: 5px solid #861922;
+}
+
+#nachricht{
+    width: 300px;
+    height: 100px;
+}
+
+button{
+    border-radius: 30px;
+    border: 5px solid #861922;
+    margin: 10px;
+}
+
+#abschicken{
+    font-weight: bolder;
+    color: #861922;
+}
+
+#abschicken:hover{
+    background-color: #861922;
+    color: #fff;
+}
+
+footer{
+    background-color: black;
+    height: 70px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socials{
+    padding: 12px;
+    width: 150px;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.socialicons{
+    height: 30px;
+    opacity: 0.6;
+}
+
+.socialicons:hover{
+    opacity: 1;
+}
+
+.credits{
+    color: #861922;   
+}
+
+.marquee{
+    animation: textwelle 8s;
+}
+
+@keyframes textwelle {
+    0 {
+    font-size: 0;
+    opacity: 0;
+    }
+    
+    60% {
+    font-size: 200%;
+    opacity: 1;
+    }
+    
+    100% {
+    font-size: 100%;
+    opacity: 1;	
+    }
