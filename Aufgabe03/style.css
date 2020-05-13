@@ -11,16 +11,22 @@ body{
 header{
     background-image: url(header-background2.jpg);
     border: 5px solid #861922;
+    height: 100px;
+    width: 800px;
+    
 }
 
-.navbar{
-    padding: 50px;
-    display: flex;
-    justify-content: flex-end;
+
+#navbar{
+    position: fixed;
+    top: 0;
+    margin-left: 500px;
+    z-index: 1;
 }
 
 nav{
     background-color: #000;
+    opacity: 0.85;
     width: 300px;
     border-radius: 10px;
 }
@@ -69,6 +75,7 @@ b{
 audio{
     border: 5px solid #861922;
     border-radius: 30px;
+    /*margin-top: 80px;*/
 }
 
 .imgborder{
