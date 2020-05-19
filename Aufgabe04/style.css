@@ -1,0 +1,178 @@
+body{
+    background-color: #B2C5E3;
+    margin: 0;
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+}
+
+header{
+    background-color: #273246;
+    position: static;
+    width: 100%;
+}
+
+.headercontent{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logoname{
+    display: flex;
+}
+
+.cartdropdown{
+    display: flex;
+    margin: 10px;
+}
+
+#name{
+    margin: auto 5px;
+    color: #667A92;
+}
+
+#logo{
+    height: 45px;
+    margin: auto 5px auto 5px;
+}
+
+#carticon{
+    height: 40px;
+    margin: 5px;
+}
+
+#dropdownimg{
+    height: 20px;
+    padding: 7px 6px 3px 6px;
+}
+
+.dropbtn {
+    background-color: #F6376D;
+    color: white;
+    font-size: 16px;
+    font-family: sans-serif;
+    border-radius: 300px;
+    border: 3px solid #667A92;
+    margin: 5px 15px 5px 5px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 40px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #273246;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.dropdown-content a:hover {
+    background-color: #F6376D;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #667A92;
+}
+
+main{
+    position: inherit;
+}
+
+#new, #old{
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionheading, .bestseller{
+    display: flex;
+    justify-content: center;
+}
+
+main h1{
+    background-color: #DEEAF8;
+    width: 220px;
+    padding: 5px;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+.bestseller h1{
+    background-color: #F6376D;
+}
+
+main img{
+    height: 600px;
+    width: 400px;
+    margin-bottom: 5px;
+}
+
+main .imgcontainer{
+    margin: 10px auto;
+    padding: 0px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.imgcontainer p, .imgcontainer button{
+    margin: 5px;
+    display: none;
+}
+
+.imgcontainer button{
+    border-radius: 5px;
+    border: none;
+    background-color: #F6376D;
+    opacity: 0.8;
+    position:inherit;
+    margin: 10px auto;
+    padding: 5px;
+    font-family: 'Playfair Display', serif;
+}
+
+.imgcontainer button:hover{
+    opacity: 1;
+}
+
+.imgcontainer:hover p, .imgcontainer:hover button{
+    display: block;
+    transition: 0.5s;
+}
+
+.price{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.beschreibung{
+    font-size: 0.7em;
+    font-family: 'Playfair Display', serif;
+}
+
+footer{
+    font-family: 'Playfair Display', serif;
+    font-size: 8px;
+}
+
+footer a{
+    text-decoration: none;
+    color: #000;
+}
