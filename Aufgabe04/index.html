@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <title>My Shop</title>
+    <title>Jackis Paper Shop</title>
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="images/interface.png" />
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet"> 
@@ -11,13 +12,13 @@
     <header>
         <div class="headercontent">
             <div class="logoname">
-                <img src="images/interface.png" id="logo">    
+                <img src="images/interface.png" id="logo" alt="Logo Papierflieger">    
                 <h1 id="name">Jackis Paper Shop</h1>
             </div>
             <div class="cartdropdown">
-                <img src="images/trolley.png" id="carticon">
+                <img src="images/trolley.png" id="carticon" alt="Einkaufswagenicon">
                 <div class="dropdown">
-                    <button class="dropbtn"><img src="images/downloading.png" id="dropdownimg"></button>
+                    <button class="dropbtn"><img src="images/downloading.png" id="dropdownimg" alt="Dropdownicon"></button>
                     <div class="dropdown-content">
                         <a href="#new">New</a>
                         <a href="#bestseller">Bestseller</a>
@@ -31,56 +32,58 @@
     <main>
         <section id="new">
             <div class="sectionheading">
-                <h1>Neues Papier</h1>
+                <h2>Neues Papier</h2>
             </div>
             <div class="imgcontainer">
                 <h3>Herzchen Papier</h3>
-                <img src="images/herzchenkonfetti.jpg">
+                <img src="images/herzchenkonfetti.jpg" alt="Herzchenkonfetti">
                 <p class="price">Preis: 0,00€</p>
                 <p class="beschreibung">Da Liebe für jeden kostenlos sein sollte.</p>
-                <button onclick="alert('Moneeeey :3')">In den Einkaufswagen</button>
+                <button onclick="alert('Love is in the air...*-*')">In den Einkaufswagen</button>
             </div>
             <div class="imgcontainer">
                 <h3>Fancy Papier</h3>
-                <img src="images/fancypapier.jpg">
+                <img src="images/fancypapier.jpg" alt="Block Papier">
                 <p class="price">Preis: 19,99€</p>
                 <p class="beschreibung">Elegantes Papier für die schönen Momente des Lebens.</p>
                 <button onclick="alert('Moneeeey :3')">In den Einkaufswagen</button>
             </div>
             <div class="imgcontainer">
                 <h3>Kariertes Papier</h3>
-                <img src="images/kariertespapier.jpg">
+                <img src="images/kariertespapier.jpg" alt="Kariertes Papier">
                 <p class="price">Preis: 1,99€</p>
                 <p class="beschreibung">Wasserabweisendes Papier für die Tränen in der Mathevorlesung.</p>
                 <button onclick="alert('Moneeeey :3')">In den Einkaufswagen</button>
             </div>
             <div class="imgcontainer">
                 <h3>Liniertes Papier</h3>
-                <img src="images/liniertespapier.png">
+                <img src="images/liniertespapier.png" alt="Liniertes Papier">
                 <p class="price">Preis: 1,99€</p>
                 <p class="beschreibung">Liniertes Papier für die unter uns,<br> die in der Vorlesung noch nicht am Laptop mitschreiben.</p>
                 <button onclick="alert('Moneeeey :3')">In den Einkaufswagen</button>
             </div>
             <div class="imgcontainer">
                 <h3>Ganz viel Papier</h3>
-                <img src="images/vielpapier.jpg">
+                <img src="images/vielpapier.jpg" alt="Papierblätter">
                 <p class="price">Preis: 99,99€</p>
                 <p class="beschreibung">Ein Lebensvorrat an Papier</p>
                 <button onclick="alert('Moneeeey :3')">In den Einkaufswagen</button>
             </div>
-            <div class="bestseller">
-                <h1>&#10084; Unsere Bestseller &#10084;</h1>
+        </section>
+        <section id="bestseller">
+            <div class="sectionheading">
+                <h2>&#10084; Unsere Bestseller &#10084;</h2>
             </div>
             <div class="imgcontainer">
                 <h3>Toiletten Papier</h3>
-                <img src="images/toilettenpapier.jpg">
+                <img src="images/toilettenpapier.jpg" alt="Toilettenpapier">
                 <p class="price">Preis: 10€</p>
                 <p class="beschreibung">Wolkig-weich für deinen wertvollen Allerwehrtesten.</p>
                 <button onclick="alert('Moneeeey :3')">In den Einkaufswagen</button>
             </div>
             <div class="imgcontainer">
                 <h3>Ein Koffer voll Toiletten Papier</h3>
-                <img src="images/einkofferklopapier.jpg">
+                <img src="images/einkofferklopapier.jpg" alt="Haufen Toilettenpapier">
                 <p class="price">Preis: unbezahlbar</p>
                 <p class="beschreibung">Kannst du dir so viel kacken überhaupt leisten?</p>
                 <button onclick="alert('Moneeeey :3')">In den Einkaufswagen</button>
@@ -90,55 +93,55 @@
         
         <section id="old">
             <div class="sectionheading">
-                <h1>Altes Papier</h1>
+                <h2>Altes Papier</h2>
             </div>
             <div class="imgcontainer">
                 <h3>Tinten Papier</h3>
-                <img src="images/federpapier.jpg">
+                <img src="images/federpapier.jpg" alt="Papier und Schriftfeder">
                 <p class="price">Preis: 9,99€</p>
                 <p class="beschreibung">Deine Brieftaube wird sich freuen.</p>
                 <button onclick="alert('Moneeeey :3')">In den Einkaufswagen</button>
             </div>
             <div class="imgcontainer">
                 <h3>Brief Papier</h3>
-                <img src="images/briefpapier.jpg">
+                <img src="images/briefpapier.jpg" alt="Handschriftlicher Brief">
                 <p class="price">Preis: 4,99€</p>
                 <p class="beschreibung">Ein bereits vorgefertigter romantischer Brief für deine/n Liebste/n.</p>
                 <button onclick="alert('Moneeeey :3')">In den Einkaufswagen</button>
             </div>
             <div class="imgcontainer">
                 <h3>Müll</h3>
-                <img src="images/m%C3%BCll.jpg">
+                <img src="images/m%C3%BCll.jpg" alt="Zerknülltes Papier">
                 <p class="price">Preis: 0,20€</p>
                 <p class="beschreibung">Unsere Low-Budget Alternative für den kleinen Geldbeutel.</p>
-                <button onclick="alert('Moneeeey :3')">In den Einkaufswagen</button>
+                <button onclick="alert('Damn boi, get a job!')">In den Einkaufswagen</button>
             </div>
             <div class="imgcontainer">
                 <h3>Gefaltetes Papier</h3>
-                <img src="images/gefaltetespapier.jpg">
+                <img src="images/gefaltetespapier.jpg" alt="Gefaltetes Papier">
                 <p class="price">Preis: 2,99€</p>
                 <p class="beschreibung">Wir haben schonmal angefangen mit dem Papierflieger.</p>
                 <button onclick="alert('Moneeeey :3')">In den Einkaufswagen</button>
             </div>
             <div class="imgcontainer">
                 <h3>Zeitungs Papier</h3>
-                <img src="images/zeitungspapier.jpg">
+                <img src="images/zeitungspapier.jpg" alt="Stapel von Zeitungspapier">
                 <p class="price">Preis: 14,99€</p>
                 <p class="beschreibung">Die aktuellsten News über den 2. Weltkrieg.</p>
                 <button onclick="alert('Moneeeey :3')">In den Einkaufswagen</button>
             </div>
             <div class="imgcontainer">
                 <h3>Kaffee Papier</h3>
-                <img src="images/kaffeepapier.jpg">
+                <img src="images/kaffeepapier.jpg" alt="Vergilbtes Papier">
                 <p class="price">Preis: 0,50€</p>
                 <p class="beschreibung">Da hat der Praktikant seinen Kaffee umgeschmissen.</p>
                 <button onclick="alert('Moneeeey :3')">In den Einkaufswagen</button>
             </div>
             <div class="imgcontainer">
                 <h3>Blumen Papier</h3>
-                <img src="images/rosenpapier.jpg">
+                <img src="images/rosenpapier.jpg" alt="Papier mit einer darauf liegenden Rose">
                 <p class="price">Preis: 7,99€</p>
-                <p class="beschreibung">Der Geruch alter Büchern vermischt <br> mit dem Duft einer jungen Rose.</p>
+                <p class="beschreibung">Der Geruch alter Bücher vermischt <br> mit dem Duft einer jungen Rose.</p>
                 <button onclick="alert('Moneeeey :3')">In den Einkaufswagen</button>
             </div>
         </section>
