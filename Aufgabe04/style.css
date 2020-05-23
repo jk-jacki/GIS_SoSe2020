@@ -1,6 +1,7 @@
 body{
     background-color: #B2C5E3;
     margin: 0;
+    padding: 0;
     text-align: center;
     font-family: 'Great Vibes', cursive;
 }
@@ -30,13 +31,17 @@ header{
     color: #667A92;
 }
 
+h1{
+    font-size: 25px;
+}
+
 #logo{
     height: 45px;
     margin: auto 5px auto 5px;
 }
 
 #carticon{
-    height: 40px;
+    height: 35px;
     margin: 5px;
 }
 
@@ -102,9 +107,13 @@ main{
     flex-direction: column;
 }
 
-.sectionheading, .bestseller{
+.sectionheading{
     display: flex;
     justify-content: center;
+}
+
+.imgcontainer h3{
+    margin: 7px
 }
 
 h2{
@@ -116,14 +125,14 @@ h2{
 }
 
 main img{
-    height: 600px;
-    width: 400px;
+    height: 396px;
+    width: 264px;
     margin-bottom: 5px;
 }
 
 main .imgcontainer{
     margin: 10px auto;
-    padding: 0 20px;
+    padding: 0 5px;
     background-color: #fff;
     border-radius: 10px;
 }
@@ -159,7 +168,7 @@ main .imgcontainer{
 }
 
 .beschreibung{
-    font-size: 0.7em;
+    font-size: 0.6em;
     font-family: 'Playfair Display', serif;
 }
 
@@ -173,12 +182,17 @@ footer a{
     color: #000;
 }
 
+
+/*Mediaqueries*/
+
 @media (min-width:641px) { 
+    
     #logo{
         margin: auto 25px;
     }
     
     #carticon{
+        height: 40px;
         margin-right: 12.5px;
     }
     
@@ -207,6 +221,20 @@ footer a{
     h2{
         margin: 20px auto;
     }
+    
+    main img{
+        height: 600px;
+        width: 400px;
+    }
+    
+    main .imgcontainer{
+        padding: 0 20px;
+    }
+    
+    .imgcontainer h3{
+    margin: 15px
+    }
+
     
 }
 
