@@ -112,7 +112,7 @@ main{
     justify-content: center;
 }
 
-.imgcontainer h3{
+.imgcontainer > h3{
     margin: 7px
 }
 
@@ -175,6 +175,7 @@ main .imgcontainer{
 footer{
     font-family: 'Playfair Display', serif;
     font-size: 8px;
+    opacity: 0.5;
 }
 
 footer a{
