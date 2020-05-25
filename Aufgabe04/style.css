@@ -139,7 +139,6 @@ main .imgcontainer{
 
 .imgcontainer p, .imgcontainer button{
     margin: 5px;
-    display: none;
 }
 
 .imgcontainer button{
@@ -153,14 +152,6 @@ main .imgcontainer{
     font-family: 'Playfair Display', serif;
 }
 
-.imgcontainer button:hover{
-    opacity: 1;
-}
-
-.imgcontainer:hover p, .imgcontainer:hover button{
-    display: block;
-    transition: 0.5s;
-}
 
 .price{
     font-size: 1.2em;
@@ -241,7 +232,18 @@ footer a{
     margin: 15px
     }
 
+    .imgcontainer button:hover{
+    opacity: 1;
+}
+    .imgcontainer p, .imgcontainer button{
+        display: none;
+    }
     
+    .imgcontainer:hover p, .imgcontainer:hover button{
+    display: block;
+    transition: 0.5s;
+}
+
 }
 
 @media (min-width:1025px) {
