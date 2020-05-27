@@ -155,7 +155,7 @@ namespace Aufgabe05 {
     
                 newTag.appendChild(div);
 
-                div.appendChild(h3);
+                div.appendChild(h3).innerHTML = sortiment[index].name;
                 div.appendChild(img);
                 div.appendChild(pPrice).innerHTML = "Preis: " + sortiment[index].preis + "€";
                 div.appendChild(pDescription).innerHTML = sortiment[index].beschreibung;
@@ -166,7 +166,7 @@ namespace Aufgabe05 {
     
                 oldTag.appendChild(div);
 
-                div.appendChild(h3);
+                div.appendChild(h3).innerHTML = sortiment[index].name;
                 div.appendChild(img);
                 div.appendChild(pPrice).innerHTML = "Preis: " + sortiment[index].preis + "€";
                 div.appendChild(pDescription).innerHTML = sortiment[index].beschreibung;

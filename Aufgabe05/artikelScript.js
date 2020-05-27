@@ -120,7 +120,7 @@ var Aufgabe05;
             let button = document.createElement("button");
             if (sortiment[index].kategorie) { //hängt an id="new" an
                 newTag.appendChild(div);
-                div.appendChild(h3);
+                div.appendChild(h3).innerHTML = sortiment[index].name;
                 div.appendChild(img);
                 div.appendChild(pPrice).innerHTML = "Preis: " + sortiment[index].preis + "€";
                 div.appendChild(pDescription).innerHTML = sortiment[index].beschreibung;
@@ -128,7 +128,7 @@ var Aufgabe05;
             }
             else { //hängt an id="old" an
                 oldTag.appendChild(div);
-                div.appendChild(h3);
+                div.appendChild(h3).innerHTML = sortiment[index].name;
                 div.appendChild(img);
                 div.appendChild(pPrice).innerHTML = "Preis: " + sortiment[index].preis + "€";
                 div.appendChild(pDescription).innerHTML = sortiment[index].beschreibung;
