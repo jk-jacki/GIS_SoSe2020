@@ -152,6 +152,9 @@ main .imgcontainer{
     font-family: 'Playfair Display', serif;
 }
 
+.imgcontainer button:hover{
+    opacity: 1;
+}
 
 .price{
     font-size: 1.2em;
@@ -231,10 +234,6 @@ footer a{
     .imgcontainer h3{
     margin: 15px
     }
-
-    .imgcontainer button:hover{
-    opacity: 1;
-}
 /*
     .imgcontainer p, .imgcontainer button{
         display: none;
