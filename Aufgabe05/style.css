@@ -1,0 +1,285 @@
+body{
+    background-color: #B2C5E3;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+}
+
+header{
+    background-color: #273246;
+    position: static;
+    width: 100%;
+}
+
+.headercontent{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logoname{
+    display: flex;
+}
+
+.cartdropdown{
+    display: flex;
+    margin: 10px;
+}
+
+#name{
+    margin: auto 5px;
+    color: #667A92;
+}
+
+h1{
+    font-size: 25px;
+}
+
+#logo{
+    height: 45px;
+    margin: auto 5px auto 5px;
+}
+
+#carticon{
+    height: 35px;
+    margin: 5px;
+}
+
+#dropdownimg{
+    height: 20px;
+    padding: 7px 6px 3px 6px;
+}
+
+.dropbtn {
+    background-color: #F6376D;
+    color: white;
+    font-size: 16px;
+    font-family: sans-serif;
+    border-radius: 300px;
+    border: 3px solid #667A92;
+    margin: 5px 15px 5px 5px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 40px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #273246;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.dropdown-content a:hover {
+    background-color: #F6376D;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #667A92;
+}
+
+main{
+    position: inherit;
+}
+
+#new, #old, #bestseller{
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionheading{
+    display: flex;
+    justify-content: center;
+}
+
+.imgcontainer > h3{
+    margin: 7px
+}
+
+h2{
+    background-color: #DEEAF8;
+    width: 220px;
+    padding: 5px;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+main img{
+    height: 396px;
+    width: 264px;
+    margin-bottom: 5px;
+}
+
+main .imgcontainer{
+    margin: 10px auto;
+    padding: 0 5px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.imgcontainer p, .imgcontainer button{
+    margin: 5px;
+}
+
+.imgcontainer button{
+    border-radius: 5px;
+    border: none;
+    background-color: #F6376D;
+    opacity: 0.6;
+    position:inherit;
+    margin: 10px auto;
+    padding: 5px;
+    font-family: 'Playfair Display', serif;
+}
+
+
+.price{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.beschreibung{
+    font-size: 0.6em;
+    font-family: 'Playfair Display', serif;
+}
+
+footer{
+    font-family: 'Playfair Display', serif;
+    font-size: 8px;
+    opacity: 0.5;
+}
+
+footer a{
+    text-decoration: none;
+    color: #000;
+}
+
+
+/*Mediaqueries*/
+
+@media (min-width:641px) { 
+    
+    #logo{
+        margin: auto 25px;
+        height: 50px;
+    }
+    
+    h1{
+        font-size: 2.3em;
+    }
+    
+    #carticon{
+        height: 40px;
+        margin-right: 12.5px;
+    }
+    
+    .cartdropdown{
+        margin-right: 50px;
+    }
+    
+    .dropdown-content{
+        width: 75px;
+    }
+    
+    .dropdown-content a {
+        font-size: 12px;
+    }
+    
+    #new, #old, #bestseller{
+        width: 100%;
+        flex-flow: row wrap;
+    }
+    
+    .sectionheading{
+        display: block;
+        width: 100%;
+    }
+    
+    h2{
+        margin: 20px auto;
+    }
+    
+    main img{
+        height: 600px;
+        width: 400px;
+    }
+    
+    main .imgcontainer{
+        padding: 0 20px;
+    }
+    
+    .imgcontainer h3{
+    margin: 15px
+    }
+
+    .imgcontainer button:hover{
+    opacity: 1;
+}
+/*
+    .imgcontainer p, .imgcontainer button{
+        display: none;
+    }
+    
+    .imgcontainer:hover p, .imgcontainer:hover button{
+    display: block;
+    transition: 0.5s;
+    }
+*/
+}
+
+@media (min-width:1025px) {
+    #logo{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+    #carticon{
+        margin-right: 25px;
+    }
+    
+    .dropdown-content{
+        width: 100px;
+    }
+    
+    .dropdown-content a {
+        font-size: 15px;
+    }
+    
+    h2{
+        font-size: 2em;
+        width: 300px;
+    }
+    
+    h3{
+        font-size: 1.7em;
+        margin: 15px;
+    }
+    
+    .price{
+        font-size: 1.5em;
+    }
+    
+    .beschreibung{
+        font-size: 0.8em;
+    }
+}
