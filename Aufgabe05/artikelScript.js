@@ -108,7 +108,7 @@ var Aufgabe05;
     function createTags() {
         for (let index = 0; index < sortiment.length; index++) {
             let div = document.createElement("div");
-            div.setAttribute("class", "imagecontainer");
+            div.setAttribute("class", "imgcontainer");
             let h3 = document.createElement("h3");
             let img = document.createElement("img");
             img.setAttribute("src", sortiment[index].image);

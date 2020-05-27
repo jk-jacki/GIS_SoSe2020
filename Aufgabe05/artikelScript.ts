@@ -135,7 +135,7 @@ namespace Aufgabe05 {
         for (let index: number = 0; index < sortiment.length; index++) {
 
             let div: HTMLDivElement = document.createElement("div");
-            div.setAttribute("class", "imagecontainer");
+            div.setAttribute("class", "imgcontainer");
             
             let h3: HTMLHeadingElement = document.createElement("h3");
 
