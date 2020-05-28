@@ -1,7 +1,6 @@
 namespace Aufgabe05 {
     interface ShopArtikel {
-        //[key: string]: boolean | string | string | number | string;
-        kategorie: boolean;
+        kategorie: boolean; //true=kategorie new; false=kategorie old
         name: string;
         image: string;
         preis: number;
