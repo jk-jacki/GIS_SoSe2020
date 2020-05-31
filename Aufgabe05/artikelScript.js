@@ -41,7 +41,7 @@ var Aufgabe05;
         kategorie: true,
         name: "Toiletten Papier",
         image: "images/toilettenpapier.jpg",
-        preis: 10.00,
+        preis: 9.99,
         beschreibung: "Wolkig-weich für deinen wertvollen Allerwehrtesten."
     };
     let artikel07 = {
@@ -68,7 +68,7 @@ var Aufgabe05;
         kategorie: false,
         name: "Müll",
         image: "images/m%C3%BCll.jpg",
-        preis: 0.20,
+        preis: 0.29,
         beschreibung: "Unsere Low-Budget Alternative für den kleinen Geldbeutel."
     };
     let artikel11 = {
@@ -89,7 +89,7 @@ var Aufgabe05;
         kategorie: false,
         name: "Kaffee Papier",
         image: "images/kaffeepapier.jpg",
-        preis: 0.50,
+        preis: 0.49,
         beschreibung: "Da hat der Praktikant seinen Kaffee umgeschmissen."
     };
     let artikel14 = {
@@ -122,7 +122,7 @@ var Aufgabe05;
                 newTag.appendChild(div);
                 div.appendChild(h3).innerHTML = sortiment[index].name;
                 div.appendChild(img);
-                div.appendChild(pPrice).innerHTML = "Preis: " + sortiment[index].preis + "€";
+                div.appendChild(pPrice).innerHTML = "Preis: " + sortiment[index].preis + " €";
                 div.appendChild(pDescription).innerHTML = sortiment[index].beschreibung;
                 div.appendChild(button).innerHTML = "In den Einkaufswagen";
             }
@@ -130,7 +130,7 @@ var Aufgabe05;
                 oldTag.appendChild(div);
                 div.appendChild(h3).innerHTML = sortiment[index].name;
                 div.appendChild(img);
-                div.appendChild(pPrice).innerHTML = "Preis: " + sortiment[index].preis + "€";
+                div.appendChild(pPrice).innerHTML = "Preis: " + sortiment[index].preis + " €";
                 div.appendChild(pDescription).innerHTML = sortiment[index].beschreibung;
                 div.appendChild(button).innerHTML = "In den Einkaufswagen";
             }
