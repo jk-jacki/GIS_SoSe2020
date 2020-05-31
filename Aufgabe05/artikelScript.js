@@ -100,7 +100,7 @@ var Aufgabe05;
         beschreibung: "Der Geruch alter Bücher vermischt <br> mit dem Duft einer jungen Rose."
     };
     //#endregion
-    const sortiment = [artikel01, artikel02, artikel03, artikel04, artikel05, artikel06, artikel07, artikel08, artikel09, artikel10, artikel11, artikel12, artikel13, artikel14];
+    let sortiment = [artikel01, artikel02, artikel03, artikel04, artikel05, artikel06, artikel07, artikel08, artikel09, artikel10, artikel11, artikel12, artikel13, artikel14];
     //DOM-Manipulation
     const newTag = document.getElementById("new");
     const oldTag = document.getElementById("old");
