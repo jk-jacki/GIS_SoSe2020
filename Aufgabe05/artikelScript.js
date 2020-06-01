@@ -110,29 +110,24 @@ var Aufgabe05;
             let div = document.createElement("div");
             div.setAttribute("class", "imgcontainer");
             let h3 = document.createElement("h3");
+            div.appendChild(h3).innerHTML = sortiment[index].name;
             let img = document.createElement("img");
             img.setAttribute("src", sortiment[index].image);
             img.setAttribute("alt", sortiment[index].name);
+            div.appendChild(img);
             let pPrice = document.createElement("p");
             pPrice.setAttribute("class", "price");
+            div.appendChild(pPrice).innerHTML = "Preis: " + sortiment[index].preis + " €";
             let pDescription = document.createElement("p");
             pDescription.setAttribute("class", "beschreibung");
+            div.appendChild(pDescription).innerHTML = sortiment[index].beschreibung;
             let button = document.createElement("button");
-            if (sortiment[index].kategorie) { //hängt an id="new" an
+            div.appendChild(button).innerHTML = "In den Einkaufswagen";
+            if (sortiment[index].kategorie) { //hängt an id="new" an   
                 newTag.appendChild(div);
-                div.appendChild(h3).innerHTML = sortiment[index].name;
-                div.appendChild(img);
-                div.appendChild(pPrice).innerHTML = "Preis: " + sortiment[index].preis + " €";
-                div.appendChild(pDescription).innerHTML = sortiment[index].beschreibung;
-                div.appendChild(button).innerHTML = "In den Einkaufswagen";
             }
             else { //hängt an id="old" an
                 oldTag.appendChild(div);
-                div.appendChild(h3).innerHTML = sortiment[index].name;
-                div.appendChild(img);
-                div.appendChild(pPrice).innerHTML = "Preis: " + sortiment[index].preis + " €";
-                div.appendChild(pDescription).innerHTML = sortiment[index].beschreibung;
-                div.appendChild(button).innerHTML = "In den Einkaufswagen";
             }
         }
     }
