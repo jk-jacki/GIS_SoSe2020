@@ -3,6 +3,7 @@ var Aufgabe05;
 (function (Aufgabe05) {
     //DOM-Manipulation
     const newTag = document.getElementById("new");
+    const bestsellerTag = document.getElementById("bestseller");
     const oldTag = document.getElementById("old");
     createTags();
     //DOM-Aufbau
@@ -10,8 +11,11 @@ var Aufgabe05;
         for (let index = 0; index < Aufgabe05.sortiment.length; index++) {
             let div = document.createElement("div");
             div.setAttribute("class", "imgcontainer");
-            if (Aufgabe05.sortiment[index].kategorie) { //hängt an id="new" an
+            if (Aufgabe05.sortiment[index].kategorie == 1) { //hängt an id="new" an
                 newTag.appendChild(div);
+            }
+            else if (Aufgabe05.sortiment[index].kategorie == 2) {
+                bestsellerTag.appendChild(div);
             }
             else { //hängt an id="old" an
                 oldTag.appendChild(div);

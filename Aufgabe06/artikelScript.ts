@@ -1,6 +1,6 @@
 namespace Aufgabe05 {
     interface ShopArtikel {
-        kategorie: boolean; //true=kategorie new; false=kategorie old
+        kategorie: number; //true=kategorie new; false=kategorie old
         name: string;
         image: string;
         preis: number;
@@ -9,7 +9,7 @@ namespace Aufgabe05 {
 
     //#region Sortiment
     let artikel01: ShopArtikel = {
-        kategorie: true,
+        kategorie: 1,
         name: "Herzchen Papier",
         image: "images/herzchenkonfetti.jpg",
         preis: 0.00,
@@ -17,7 +17,7 @@ namespace Aufgabe05 {
     };
 
     let artikel02: ShopArtikel = {
-        kategorie: true,
+        kategorie: 1,
         name: "Fancy Papier",
         image: "images/fancypapier.jpg",
         preis: 19.99,
@@ -25,7 +25,7 @@ namespace Aufgabe05 {
     };
 
     let artikel03: ShopArtikel = {
-        kategorie: true,
+        kategorie: 1,
         name: "Kariertes Papier",
         image: "images/kariertespapier.jpg",
         preis: 1.99,
@@ -33,7 +33,7 @@ namespace Aufgabe05 {
     };
 
     let artikel04: ShopArtikel = {
-        kategorie: true,
+        kategorie: 1,
         name: "Liniertes Papier",
         image: "images/liniertespapier.png",
         preis: 1.99,
@@ -41,7 +41,7 @@ namespace Aufgabe05 {
     };
 
     let artikel05: ShopArtikel = {
-        kategorie: true,
+        kategorie: 1,
         name: "Ganz viel Papier",
         image: "images/vielpapier.jpg",
         preis: 99.99,
@@ -49,7 +49,7 @@ namespace Aufgabe05 {
     };
 
     let artikel06: ShopArtikel = {
-        kategorie: true,
+        kategorie: 2,
         name: "Toiletten Papier",
         image: "images/toilettenpapier.jpg",
         preis: 9.99,
@@ -57,7 +57,7 @@ namespace Aufgabe05 {
     };
 
     let artikel07: ShopArtikel = {
-        kategorie: true,
+        kategorie: 2,
         name: "Ein Koffer voll Toiletten Papier",
         image: "images/einkofferklopapier.jpg",
         preis: 9999999.99,
@@ -65,14 +65,14 @@ namespace Aufgabe05 {
     };
 
     let artikel08: ShopArtikel = {
-        kategorie: false,
+        kategorie: 3,
         name: "Tinten Papier",
         image: "images/federpapier.jpg",
         preis: 9.99, beschreibung: "Deine Brieftaube wird sich freuen."
     };
 
     let artikel09: ShopArtikel = {
-        kategorie: false,
+        kategorie: 3,
         name: "Brief Papier",
         image: "images/briefpapier.jpg",
         preis: 4.99,
@@ -80,7 +80,7 @@ namespace Aufgabe05 {
     };
 
     let artikel10: ShopArtikel = {
-        kategorie: false,
+        kategorie: 3,
         name: "Müll",
         image: "images/m%C3%BCll.jpg",
         preis: 0.29,
@@ -88,7 +88,7 @@ namespace Aufgabe05 {
     };
 
     let artikel11: ShopArtikel = {
-        kategorie: false,
+        kategorie: 3,
         name: "Gefaltetes Papier",
         image: "images/gefaltetespapier.jpg",
         preis: 2.99,
@@ -96,7 +96,7 @@ namespace Aufgabe05 {
     };
 
     let artikel12: ShopArtikel = {
-        kategorie: false,
+        kategorie: 3,
         name: "Zeitungs Papier",
         image: "images/zeitungspapier.jpg",
         preis: 14.99,
@@ -104,7 +104,7 @@ namespace Aufgabe05 {
     };
 
     let artikel13: ShopArtikel = {
-        kategorie: false,
+        kategorie: 3,
         name: "Kaffee Papier",
         image: "images/kaffeepapier.jpg",
         preis: 0.49,
@@ -112,7 +112,7 @@ namespace Aufgabe05 {
     };
 
     let artikel14: ShopArtikel = {
-        kategorie: false,
+        kategorie: 3,
         name: "Blumen Papier",
         image: "images/rosenpapier.jpg",
         preis: 7.99,

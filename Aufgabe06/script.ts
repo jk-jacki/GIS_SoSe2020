@@ -2,6 +2,7 @@ namespace Aufgabe05 {
     //DOM-Manipulation
 
     const newTag: HTMLElement = document.getElementById("new") as HTMLDivElement;
+    const bestsellerTag: HTMLElement = document.getElementById("bestseller") as HTMLDivElement;
     const oldTag: HTMLElement = document.getElementById("old") as HTMLDivElement;
 
     createTags();
@@ -14,8 +15,11 @@ namespace Aufgabe05 {
             let div: HTMLDivElement = document.createElement("div");
             div.setAttribute("class", "imgcontainer");
 
-            if (sortiment[index].kategorie) { //hängt an id="new" an
+            if (sortiment[index].kategorie == 1) { //hängt an id="new" an
                 newTag.appendChild(div);
+            }
+            else if (sortiment[index].kategorie == 2) {
+                bestsellerTag.appendChild(div);
             }
             else { //hängt an id="old" an
                 oldTag.appendChild(div);
