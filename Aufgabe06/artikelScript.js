@@ -1,6 +1,6 @@
 "use strict";
-var Aufgabe05;
-(function (Aufgabe05) {
+var Aufgabe06;
+(function (Aufgabe06) {
     //#region Sortiment
     let artikel01 = {
         kategorie: 1,
@@ -100,10 +100,15 @@ var Aufgabe05;
         beschreibung: "Der Geruch alter Bücher vermischt <br> mit dem Duft einer jungen Rose."
     };
     //#endregion
-    Aufgabe05.sortiment = [artikel01, artikel02, artikel03, artikel04, artikel05, artikel06, artikel07, artikel08, artikel09, artikel10, artikel11, artikel12, artikel13, artikel14];
-    Aufgabe05.warenkorbZahl = 0;
-    Aufgabe05.warenkorbPreis = 0;
-    Aufgabe05.zaehler = document.createElement("span");
-    Aufgabe05.zaehler.setAttribute("id", "zaehler");
-})(Aufgabe05 || (Aufgabe05 = {}));
+    //Kategorien-Sections
+    Aufgabe06.newTag = document.getElementById("new");
+    Aufgabe06.bestsellerTag = document.getElementById("bestseller");
+    Aufgabe06.oldTag = document.getElementById("old");
+    Aufgabe06.sortiment = [artikel01, artikel02, artikel03, artikel04, artikel05, artikel06, artikel07, artikel08, artikel09, artikel10, artikel11, artikel12, artikel13, artikel14];
+    //Warenkorb
+    Aufgabe06.warenkorbZahl = 0;
+    Aufgabe06.warenkorbPreis = 0;
+    Aufgabe06.zaehler = document.createElement("span");
+    Aufgabe06.zaehler.setAttribute("id", "zaehler");
+})(Aufgabe06 || (Aufgabe06 = {}));
 //# sourceMappingURL=artikelScript.js.map
