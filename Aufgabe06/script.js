@@ -59,8 +59,10 @@ var Aufgabe06;
     function handleKaufenClick(_event) {
         //Zähler über Carticon
         Aufgabe06.warenkorbZahl++;
-        Aufgabe06.zaehler.innerHTML = Aufgabe06.warenkorbZahl.toString();
-        document.getElementById("cart")?.appendChild(Aufgabe06.zaehler);
+        if (Aufgabe06.warenkorbZahl > 0) {
+            Aufgabe06.zaehler.innerHTML = Aufgabe06.warenkorbZahl.toString();
+            document.getElementById("cart")?.appendChild(Aufgabe06.zaehler);
+        }
         /*
         //Get Preis
         let preisString: string = "";
@@ -92,7 +94,7 @@ var Aufgabe06;
     showAllMenu.addEventListener("click", handleShowAllMenu);
     //New Sortiment aufbauen
     function handleNewMenu(_event) {
-        deleteElements();
+        deleteTags();
         //Erstellen der SectionHeading
         let divNewSectionheading = document.createElement("div");
         divNewSectionheading.setAttribute("class", "sectionheading");
@@ -125,7 +127,7 @@ var Aufgabe06;
         }
     }
     function handleBestsellerMenu(_event) {
-        deleteElements();
+        deleteTags();
         //Erstellen der SectionHeading
         let divBestsellerSectionheading = document.createElement("div");
         divBestsellerSectionheading.setAttribute("class", "sectionheading");
@@ -158,7 +160,7 @@ var Aufgabe06;
         }
     }
     function handleOldMenu(_event) {
-        deleteElements();
+        deleteTags();
         //Erstellen der SectionHeading
         let divOldSectionheading = document.createElement("div");
         divOldSectionheading.setAttribute("class", "sectionheading");
@@ -191,11 +193,11 @@ var Aufgabe06;
         }
     }
     function handleShowAllMenu() {
-        deleteElements();
+        deleteTags();
         createTags();
     }
     //Altes Sortiment löschen
-    function deleteElements() {
+    function deleteTags() {
         let alteSections = [Aufgabe06.newTag, Aufgabe06.bestsellerTag, Aufgabe06.oldTag];
         for (let i = 0; i < alteSections.length; i++) { //durchläuft SectionArray          
             while (alteSections[i].hasChildNodes()) { //durchläuft section und löscht alle Elemente

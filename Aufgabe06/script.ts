@@ -72,9 +72,11 @@ namespace Aufgabe06 {
     function handleKaufenClick(_event: Event): void {
         //Zähler über Carticon
         warenkorbZahl++;
-        zaehler.innerHTML = warenkorbZahl.toString();
-        document.getElementById("cart")?.appendChild(zaehler);
-
+        if (warenkorbZahl > 0) {
+            zaehler.innerHTML = warenkorbZahl.toString();
+            document.getElementById("cart")?.appendChild(zaehler);
+        }
+        
         /*
         //Get Preis
         let preisString: string = "";
@@ -98,21 +100,21 @@ namespace Aufgabe06 {
     }
 
     //Menübuttons zum Seitenaufbau
-    let newMenu: HTMLSpanElement = document.getElementById("newMenu")!;
+    let newMenu: HTMLSpanElement = <HTMLSpanElement>document.getElementById("newMenu");
     newMenu.addEventListener("click", handleNewMenu);
 
-    let bestsellerMenu: HTMLSpanElement = document.getElementById("bestsellerMenu")!;
+    let bestsellerMenu: HTMLSpanElement = <HTMLSpanElement>document.getElementById("bestsellerMenu");
     bestsellerMenu.addEventListener("click", handleBestsellerMenu);
 
-    let oldMenu: HTMLSpanElement = document.getElementById("oldMenu")!;
+    let oldMenu: HTMLSpanElement = <HTMLSpanElement>document.getElementById("oldMenu");
     oldMenu.addEventListener("click", handleOldMenu);
 
-    let showAllMenu: HTMLSpanElement = document.getElementById("showAllMenu")!;
+    let showAllMenu: HTMLSpanElement = <HTMLSpanElement>document.getElementById("showAllMenu");
     showAllMenu.addEventListener("click", handleShowAllMenu);
 
     //New Sortiment aufbauen
     function handleNewMenu(_event: Event): void {
-        deleteElements();
+        deleteTags();
 
         //Erstellen der SectionHeading
         let divNewSectionheading: HTMLDivElement = document.createElement("div");
@@ -154,7 +156,7 @@ namespace Aufgabe06 {
     }
 
     function handleBestsellerMenu(_event: Event): void {
-        deleteElements();
+        deleteTags();
 
         //Erstellen der SectionHeading
         let divBestsellerSectionheading: HTMLDivElement = document.createElement("div");
@@ -196,7 +198,7 @@ namespace Aufgabe06 {
     }
 
     function handleOldMenu(_event: Event): void {
-        deleteElements();
+        deleteTags();
 
         //Erstellen der SectionHeading
         let divOldSectionheading: HTMLDivElement = document.createElement("div");
@@ -238,12 +240,12 @@ namespace Aufgabe06 {
     }
 
     function handleShowAllMenu(): void {
-        deleteElements();
+        deleteTags();
         createTags();
     }
 
     //Altes Sortiment löschen
-    function deleteElements(): void {
+    function deleteTags(): void {
         let alteSections: HTMLElement[] = [newTag, bestsellerTag, oldTag];
 
         for (let i: number = 0; i < alteSections.length; i++) { //durchläuft SectionArray          
