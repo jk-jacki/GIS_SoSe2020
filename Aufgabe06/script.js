@@ -1,7 +1,7 @@
 "use strict";
 var Aufgabe06;
 (function (Aufgabe06) {
-    //DOM-Manipulation
+    //bei Seitenaufruf
     createTags();
     //DOM-Aufbau
     function createTags() {
@@ -51,6 +51,7 @@ var Aufgabe06;
             pDescription.setAttribute("class", "beschreibung");
             div.appendChild(pDescription).innerHTML = Aufgabe06.sortiment[index].beschreibung;
             let button = document.createElement("button");
+            button.setAttribute("sortimentStelle", index.toString());
             button.addEventListener("click", handleKaufenClick);
             div.appendChild(button).innerHTML = "In den Einkaufswagen";
         }
@@ -60,17 +61,24 @@ var Aufgabe06;
         Aufgabe06.warenkorbZahl++;
         Aufgabe06.zaehler.innerHTML = Aufgabe06.warenkorbZahl.toString();
         document.getElementById("cart")?.appendChild(Aufgabe06.zaehler);
+        /*
         //Get Preis
-        let preisString = "";
+        let preisString: string = "";
         if (_event.target != null) {
-            let clickedButton = _event.target;
-            if (clickedButton.previousSibling.previousSibling.firstChild.nodeValue != undefined) {
-                preisString = clickedButton.previousSibling.previousSibling.firstChild.nodeValue;
+            let clickedButton: HTMLElement = <HTMLElement>_event.target;
+            if (clickedButton.previousSibling!.previousSibling!.firstChild!.nodeValue != undefined) {
+                preisString = clickedButton.previousSibling!.previousSibling!.firstChild!.nodeValue;    //!!!stattdessen lieber über parentNode gehen und in der Liste der ChildNodes nach dem P-Preis-Tag suchen
                 preisString = preisString.substring(7, preisString.length - 2);
             }
         }
+
         //Gesamtpreisermittlung
-        Aufgabe06.warenkorbPreis += parseFloat(preisString);
+        warenkorbPreis += parseFloat(preisString);
+        console.log("Ihr Warenkorb beträgt: " + warenkorbPreis + " €");
+        */
+        let clickedButton = _event.target;
+        let artikelIndex = parseFloat(clickedButton.getAttribute("sortimentStelle"));
+        Aufgabe06.warenkorbPreis += Aufgabe06.sortiment[artikelIndex].preis;
         console.log("Ihr Warenkorb beträgt: " + Aufgabe06.warenkorbPreis + " €");
     }
     //Menübuttons zum Seitenaufbau
@@ -110,6 +118,7 @@ var Aufgabe06;
                 pDescription.setAttribute("class", "beschreibung");
                 div.appendChild(pDescription).innerHTML = Aufgabe06.sortiment[index].beschreibung;
                 let button = document.createElement("button");
+                button.setAttribute("sortimentStelle", index.toString());
                 button.addEventListener("click", handleKaufenClick);
                 div.appendChild(button).innerHTML = "In den Einkaufswagen";
             }
@@ -142,6 +151,7 @@ var Aufgabe06;
                 pDescription.setAttribute("class", "beschreibung");
                 div.appendChild(pDescription).innerHTML = Aufgabe06.sortiment[index].beschreibung;
                 let button = document.createElement("button");
+                button.setAttribute("sortimentStelle", index.toString());
                 button.addEventListener("click", handleKaufenClick);
                 div.appendChild(button).innerHTML = "In den Einkaufswagen";
             }
@@ -174,6 +184,7 @@ var Aufgabe06;
                 pDescription.setAttribute("class", "beschreibung");
                 div.appendChild(pDescription).innerHTML = Aufgabe06.sortiment[index].beschreibung;
                 let button = document.createElement("button");
+                button.setAttribute("sortimentStelle", index.toString());
                 button.addEventListener("click", handleKaufenClick);
                 div.appendChild(button).innerHTML = "In den Einkaufswagen";
             }

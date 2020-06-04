@@ -1,6 +1,5 @@
 namespace Aufgabe06 {
-    //DOM-Manipulation
-    
+    //bei Seitenaufruf
     createTags();
 
     //DOM-Aufbau
@@ -9,7 +8,7 @@ namespace Aufgabe06 {
         let divNewSectionheading: HTMLDivElement = document.createElement("div");
         divNewSectionheading.setAttribute("class", "sectionheading");
         let sectionNewHeading: HTMLHeadingElement = document.createElement("h2");
-        sectionNewHeading.innerHTML = "Neues Papier"; 
+        sectionNewHeading.innerHTML = "Neues Papier";
         divNewSectionheading.appendChild(sectionNewHeading);
         newTag.appendChild(divNewSectionheading);
 
@@ -17,7 +16,7 @@ namespace Aufgabe06 {
         let divBestsellerSectionheading: HTMLDivElement = document.createElement("div");
         divBestsellerSectionheading.setAttribute("class", "sectionheading");
         let sectionBestsellerHeading: HTMLHeadingElement = document.createElement("h2");
-        sectionBestsellerHeading.innerHTML = "&#10084; Unsere Bestseller &#10084;"; 
+        sectionBestsellerHeading.innerHTML = "&#10084; Unsere Bestseller &#10084;";
         divBestsellerSectionheading.appendChild(sectionBestsellerHeading);
         bestsellerTag.appendChild(divBestsellerSectionheading);
 
@@ -25,7 +24,7 @@ namespace Aufgabe06 {
         let divOldSectionheading: HTMLDivElement = document.createElement("div");
         divOldSectionheading.setAttribute("class", "sectionheading");
         let sectionOldHeading: HTMLHeadingElement = document.createElement("h2");
-        sectionOldHeading.innerHTML = "Altes Papier"; 
+        sectionOldHeading.innerHTML = "Altes Papier";
         divOldSectionheading.appendChild(sectionOldHeading);
         oldTag.appendChild(divOldSectionheading);
 
@@ -35,18 +34,18 @@ namespace Aufgabe06 {
             div.setAttribute("class", "imgcontainer");
 
             if (sortiment[index].kategorie == 1) { //hängt an id="new" an
-                
+
                 newTag.appendChild(div);
             }
             else if (sortiment[index].kategorie == 2) { //hängt an id="bestseller" an
-                
+
                 bestsellerTag.appendChild(div);
             }
             else { //hängt an id="old" an
-                
+
                 oldTag.appendChild(div);
             }
-            
+
             let h3: HTMLHeadingElement = document.createElement("h3");
             div.appendChild(h3).innerHTML = sortiment[index].name;
 
@@ -64,6 +63,7 @@ namespace Aufgabe06 {
             div.appendChild(pDescription).innerHTML = sortiment[index].beschreibung;
 
             let button: HTMLButtonElement = document.createElement("button");
+            button.setAttribute("sortimentStelle", index.toString());
             button.addEventListener("click", handleKaufenClick);
             div.appendChild(button).innerHTML = "In den Einkaufswagen";
         }
@@ -71,23 +71,30 @@ namespace Aufgabe06 {
 
     function handleKaufenClick(_event: Event): void {
         //Zähler über Carticon
-        warenkorbZahl++; 
+        warenkorbZahl++;
         zaehler.innerHTML = warenkorbZahl.toString();
         document.getElementById("cart")?.appendChild(zaehler);
 
+        /*
         //Get Preis
         let preisString: string = "";
         if (_event.target != null) {
-            let clickedButton: HTMLElement = <HTMLElement> _event.target;
+            let clickedButton: HTMLElement = <HTMLElement>_event.target;
             if (clickedButton.previousSibling!.previousSibling!.firstChild!.nodeValue != undefined) {
-                preisString = clickedButton.previousSibling!.previousSibling!.firstChild!.nodeValue;
-                preisString = preisString.substring(7, preisString.length - 2);               
-            }          
+                preisString = clickedButton.previousSibling!.previousSibling!.firstChild!.nodeValue;    //!!!stattdessen lieber über parentNode gehen und in der Liste der ChildNodes nach dem P-Preis-Tag suchen
+                preisString = preisString.substring(7, preisString.length - 2);
+            }
         }
 
         //Gesamtpreisermittlung
         warenkorbPreis += parseFloat(preisString);
-        console.log("Ihr Warenkorb beträgt: " + warenkorbPreis + " €");       
+        console.log("Ihr Warenkorb beträgt: " + warenkorbPreis + " €");
+        */
+
+        let clickedButton: HTMLElement = <HTMLElement>_event.target;
+        let artikelIndex: number = parseFloat(clickedButton.getAttribute("sortimentStelle")!);
+        warenkorbPreis += sortiment[artikelIndex].preis;
+        console.log("Ihr Warenkorb beträgt: " + warenkorbPreis + " €");
     }
 
     //Menübuttons zum Seitenaufbau
@@ -104,14 +111,14 @@ namespace Aufgabe06 {
     showAllMenu.addEventListener("click", handleShowAllMenu);
 
     //New Sortiment aufbauen
-    function handleNewMenu (_event: Event): void {
+    function handleNewMenu(_event: Event): void {
         deleteElements();
 
         //Erstellen der SectionHeading
         let divNewSectionheading: HTMLDivElement = document.createElement("div");
         divNewSectionheading.setAttribute("class", "sectionheading");
         let sectionNewHeading: HTMLHeadingElement = document.createElement("h2");
-        sectionNewHeading.innerHTML = "Neues Papier"; 
+        sectionNewHeading.innerHTML = "Neues Papier";
         divNewSectionheading.appendChild(sectionNewHeading);
         newTag.appendChild(divNewSectionheading);
 
@@ -139,20 +146,21 @@ namespace Aufgabe06 {
                 div.appendChild(pDescription).innerHTML = sortiment[index].beschreibung;
 
                 let button: HTMLButtonElement = document.createElement("button");
+                button.setAttribute("sortimentStelle", index.toString());
                 button.addEventListener("click", handleKaufenClick);
                 div.appendChild(button).innerHTML = "In den Einkaufswagen";
-            }            
+            }
         }
     }
 
-    function handleBestsellerMenu (_event: Event): void {
+    function handleBestsellerMenu(_event: Event): void {
         deleteElements();
 
         //Erstellen der SectionHeading
         let divBestsellerSectionheading: HTMLDivElement = document.createElement("div");
         divBestsellerSectionheading.setAttribute("class", "sectionheading");
         let sectionBestsellerHeading: HTMLHeadingElement = document.createElement("h2");
-        sectionBestsellerHeading.innerHTML = "&#10084; Unsere Bestseller &#10084;"; 
+        sectionBestsellerHeading.innerHTML = "&#10084; Unsere Bestseller &#10084;";
         divBestsellerSectionheading.appendChild(sectionBestsellerHeading);
         bestsellerTag.appendChild(divBestsellerSectionheading);
 
@@ -180,20 +188,21 @@ namespace Aufgabe06 {
                 div.appendChild(pDescription).innerHTML = sortiment[index].beschreibung;
 
                 let button: HTMLButtonElement = document.createElement("button");
+                button.setAttribute("sortimentStelle", index.toString());
                 button.addEventListener("click", handleKaufenClick);
                 div.appendChild(button).innerHTML = "In den Einkaufswagen";
-            }            
+            }
         }
     }
 
-    function handleOldMenu (_event: Event): void {
+    function handleOldMenu(_event: Event): void {
         deleteElements();
 
         //Erstellen der SectionHeading
         let divOldSectionheading: HTMLDivElement = document.createElement("div");
         divOldSectionheading.setAttribute("class", "sectionheading");
         let sectionOldHeading: HTMLHeadingElement = document.createElement("h2");
-        sectionOldHeading.innerHTML = "Altes Papier"; 
+        sectionOldHeading.innerHTML = "Altes Papier";
         divOldSectionheading.appendChild(sectionOldHeading);
         oldTag.appendChild(divOldSectionheading);
 
@@ -221,9 +230,10 @@ namespace Aufgabe06 {
                 div.appendChild(pDescription).innerHTML = sortiment[index].beschreibung;
 
                 let button: HTMLButtonElement = document.createElement("button");
+                button.setAttribute("sortimentStelle", index.toString());
                 button.addEventListener("click", handleKaufenClick);
                 div.appendChild(button).innerHTML = "In den Einkaufswagen";
-            }            
+            }
         }
     }
 
@@ -237,11 +247,11 @@ namespace Aufgabe06 {
         let alteSections: HTMLElement[] = [newTag, bestsellerTag, oldTag];
 
         for (let i: number = 0; i < alteSections.length; i++) { //durchläuft SectionArray          
-            
+
             while (alteSections[i].hasChildNodes()) { //durchläuft section und löscht alle Elemente
-                alteSections[i].removeChild(alteSections[i].firstChild!); 
+                alteSections[i].removeChild(alteSections[i].firstChild!);
             }
-            
+
         }
     }
 }    
