@@ -1,4 +1,18 @@
 namespace Aufgabe06 {
+    //Kategorien-Sections
+    const newTag: HTMLElement = document.getElementById("new") as HTMLDivElement;
+    const bestsellerTag: HTMLElement = document.getElementById("bestseller") as HTMLDivElement;
+    const oldTag: HTMLElement = document.getElementById("old") as HTMLDivElement;
+
+    //Warenkorb
+    let warenkorbZahl: number = 0;
+    let warenkorbPreis: number = 0;
+
+    let zaehler: HTMLSpanElement = document.createElement("span");
+    zaehler.setAttribute("id", "zaehler");
+
+
+    
     //bei Seitenaufruf
     createTags();
 
@@ -14,7 +28,7 @@ namespace Aufgabe06 {
 
     let showAllMenu: HTMLSpanElement = <HTMLSpanElement>document.getElementById("showAllMenu");
     showAllMenu.addEventListener("click", handleShowAllMenu);
-    
+
     //DOM-Aufbau
     function createTags(): void {
         kategorieElements(1);
@@ -29,9 +43,9 @@ namespace Aufgabe06 {
             zaehler.innerHTML = warenkorbZahl.toString();
             document.getElementById("cart")?.appendChild(zaehler);
         }
-        
+        //Gesamtpreis
         let clickedButton: HTMLElement = <HTMLElement>_event.target;
-        let artikelIndex: number = parseFloat(clickedButton.getAttribute("sortimentStelle")!);
+        let artikelIndex: number = parseFloat(<string>clickedButton.getAttribute("sortimentStelle"));
         warenkorbPreis += sortiment[artikelIndex].preis;
         console.log("Ihr Warenkorb beträgt: " + warenkorbPreis + " €");
     }
@@ -64,7 +78,7 @@ namespace Aufgabe06 {
         for (let i: number = 0; i < alteSections.length; i++) { //durchläuft SectionArray          
 
             while (alteSections[i].hasChildNodes()) { //durchläuft section und löscht alle Elemente
-                alteSections[i].removeChild(alteSections[i].firstChild!);
+                alteSections[i].removeChild(<Node>alteSections[i].firstChild);
             }
 
         }

@@ -119,17 +119,6 @@ namespace Aufgabe06 {
         beschreibung: "Der Geruch alter Bücher vermischt <br> mit dem Duft einer jungen Rose."
     };
     //#endregion
-    //Kategorien-Sections
-    export const newTag: HTMLElement = document.getElementById("new") as HTMLDivElement;
-    export const bestsellerTag: HTMLElement = document.getElementById("bestseller") as HTMLDivElement;
-    export const oldTag: HTMLElement = document.getElementById("old") as HTMLDivElement;
-
     export let sortiment: ShopArtikel[] = [artikel01, artikel02, artikel03, artikel04, artikel05, artikel06, artikel07, artikel08, artikel09, artikel10, artikel11, artikel12, artikel13, artikel14];
     
-    //Warenkorb
-    export let warenkorbZahl: number = 0;
-    export let warenkorbPreis: number = 0;
-
-    export let zaehler: HTMLSpanElement = document.createElement("span");
-    zaehler.setAttribute("id", "zaehler");
 }

@@ -1,6 +1,15 @@
 "use strict";
 var Aufgabe06;
 (function (Aufgabe06) {
+    //Kategorien-Sections
+    const newTag = document.getElementById("new");
+    const bestsellerTag = document.getElementById("bestseller");
+    const oldTag = document.getElementById("old");
+    //Warenkorb
+    let warenkorbZahl = 0;
+    let warenkorbPreis = 0;
+    let zaehler = document.createElement("span");
+    zaehler.setAttribute("id", "zaehler");
     //bei Seitenaufruf
     createTags();
     //Menübuttons zum Seitenaufbau
@@ -20,15 +29,16 @@ var Aufgabe06;
     }
     function handleKaufenClick(_event) {
         //Zähler über Carticon
-        Aufgabe06.warenkorbZahl++;
-        if (Aufgabe06.warenkorbZahl > 0) {
-            Aufgabe06.zaehler.innerHTML = Aufgabe06.warenkorbZahl.toString();
-            document.getElementById("cart")?.appendChild(Aufgabe06.zaehler);
+        warenkorbZahl++;
+        if (warenkorbZahl > 0) {
+            zaehler.innerHTML = warenkorbZahl.toString();
+            document.getElementById("cart")?.appendChild(zaehler);
         }
+        //Gesamtpreis
         let clickedButton = _event.target;
         let artikelIndex = parseFloat(clickedButton.getAttribute("sortimentStelle"));
-        Aufgabe06.warenkorbPreis += Aufgabe06.sortiment[artikelIndex].preis;
-        console.log("Ihr Warenkorb beträgt: " + Aufgabe06.warenkorbPreis + " €");
+        warenkorbPreis += Aufgabe06.sortiment[artikelIndex].preis;
+        console.log("Ihr Warenkorb beträgt: " + warenkorbPreis + " €");
     }
     //Kategorien zum Anzeigen wählen
     function handleNewMenu(_event) {
@@ -53,7 +63,7 @@ var Aufgabe06;
     Aufgabe06.handleShowAllMenu = handleShowAllMenu;
     //Altes Sortiment löschen
     function deleteTags() {
-        let alteSections = [Aufgabe06.newTag, Aufgabe06.bestsellerTag, Aufgabe06.oldTag];
+        let alteSections = [newTag, bestsellerTag, oldTag];
         for (let i = 0; i < alteSections.length; i++) { //durchläuft SectionArray          
             while (alteSections[i].hasChildNodes()) { //durchläuft section und löscht alle Elemente
                 alteSections[i].removeChild(alteSections[i].firstChild);
@@ -68,15 +78,15 @@ var Aufgabe06;
         divSectionheading.appendChild(sectionHeading);
         if (_kategorie == 1) {
             sectionHeading.innerHTML = "Neues Papier";
-            Aufgabe06.newTag.appendChild(divSectionheading);
+            newTag.appendChild(divSectionheading);
         }
         else if (_kategorie == 2) {
             sectionHeading.innerHTML = "&#10084; Unsere Bestseller &#10084;";
-            Aufgabe06.bestsellerTag.appendChild(divSectionheading);
+            bestsellerTag.appendChild(divSectionheading);
         }
         else {
             sectionHeading.innerHTML = "Altes Papier";
-            Aufgabe06.oldTag.appendChild(divSectionheading);
+            oldTag.appendChild(divSectionheading);
         }
         //Artikelelemente
         for (let index = 0; index < Aufgabe06.sortiment.length; index++) {
@@ -100,13 +110,13 @@ var Aufgabe06;
                 button.addEventListener("click", handleKaufenClick);
                 div.appendChild(button).innerHTML = "In den Einkaufswagen";
                 if (_kategorie == 1) {
-                    Aufgabe06.newTag.appendChild(div);
+                    newTag.appendChild(div);
                 }
                 else if (_kategorie == 2) {
-                    Aufgabe06.bestsellerTag.appendChild(div);
+                    bestsellerTag.appendChild(div);
                 }
                 else {
-                    Aufgabe06.oldTag.appendChild(div);
+                    oldTag.appendChild(div);
                 }
             }
         }
