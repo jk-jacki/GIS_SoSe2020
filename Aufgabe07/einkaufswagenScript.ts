@@ -22,7 +22,7 @@ namespace Aufgabe07 {
             preisAusgabeSection.appendChild(divPreis);
 
             let pPreisAusgabe: HTMLParagraphElement = document.createElement("p");
-            pPreisAusgabe.innerHTML = "Gesamtpreis: " + gesamtPreis + "€";
+            pPreisAusgabe.innerHTML = "Warenkorbpreis: " + gesamtPreis + "€";
             divPreis.appendChild(pPreisAusgabe);
     
             let deleteButton: HTMLButtonElement = document.createElement("button");

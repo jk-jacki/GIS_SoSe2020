@@ -18,7 +18,7 @@ var Aufgabe07;
             divPreis.setAttribute("id", "preisCartDiv");
             preisAusgabeSection.appendChild(divPreis);
             let pPreisAusgabe = document.createElement("p");
-            pPreisAusgabe.innerHTML = "Gesamtpreis: " + gesamtPreis + "€";
+            pPreisAusgabe.innerHTML = "Warenkorbpreis: " + gesamtPreis + "€";
             divPreis.appendChild(pPreisAusgabe);
             let deleteButton = document.createElement("button");
             deleteButton.setAttribute("id", "deleteCartButton");
