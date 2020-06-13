@@ -50,7 +50,8 @@ var Aufgabe07;
         localStorage.setItem("gesamtPreis", warenkorbPreis.toString());
         //ArtikelItems
         if (localStorage.getItem(artikelIndex.toString())) {
-            artikelAnzahl++;
+            let aktuelleAnzahl = parseFloat(localStorage.getItem(artikelIndex.toString())); //artikelAnzahl++;
+            artikelAnzahl = aktuelleAnzahl + 1;
         }
         else {
             artikelAnzahl = 1;

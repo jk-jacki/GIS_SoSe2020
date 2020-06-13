@@ -63,7 +63,8 @@ namespace Aufgabe07 {
         //ArtikelItems
         
         if (localStorage.getItem(artikelIndex.toString())) {
-            artikelAnzahl++;
+            let aktuelleAnzahl: number = parseFloat(<string>localStorage.getItem(artikelIndex.toString())); //artikelAnzahl++;
+            artikelAnzahl = aktuelleAnzahl + 1;
         }
         else {
             artikelAnzahl = 1;
