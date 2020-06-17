@@ -1,7 +1,7 @@
 "use strict";
 var A08Client;
 (function (A08Client) {
-    let submitButton = document.querySelector("#submitButton");
+    let submitButton = document.getElementById("submitButton");
     submitButton.addEventListener("click", communicate);
     async function communicate() {
         let formData = new FormData(document.forms[0]);
