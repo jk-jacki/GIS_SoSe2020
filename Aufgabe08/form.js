@@ -6,7 +6,7 @@ const Http = require("http");
 var A08Server;
 (function (A08Server) {
     console.log("Starting server");
-    let formData = new FormData(document.forms[0]);
+    //let formData: FormData = new FormData(document.forms[0]);
     let port = Number(process.env.PORT);
     if (!port)
         port = 8100;
@@ -19,11 +19,11 @@ var A08Server;
     }
     async function handleRequest(_request, _response) {
         console.log("I hear voices!");
-        let url = "https://gissose2020jacquelinekoch.herokuapp.com/";
-        let query = new URLSearchParams(formData);
+        /* let url: string = "https://gissose2020jacquelinekoch.herokuapp.com/";
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
         url += url + "?" + query.toString();
-        await fetch(url);
-        console.log(url);
+        await fetch(url); */
+        //console.log(url);
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         _response.write(_request.url);
