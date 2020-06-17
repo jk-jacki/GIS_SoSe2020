@@ -33,6 +33,7 @@ export namespace A08Server {
     _response.setHeader("Access-Control-Allow-Origin", "*");
 
     _response.write(_request.url);
+    console.log(_request.url);
 
     _response.end();
   }
