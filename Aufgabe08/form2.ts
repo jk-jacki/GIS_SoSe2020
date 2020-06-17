@@ -9,9 +9,11 @@ namespace A08Client {
         let url: string = "https://gissose2020jacquelinekoch.herokuapp.com/";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url += url + "?" + query.toString();
-        await fetch(url);
+        
+        let response: Response = await fetch(url);
+        let reply: string = await response.url;
 
-        console.log(url);
+        console.log(reply);
     }
     
 }
