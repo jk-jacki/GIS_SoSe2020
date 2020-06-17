@@ -17,7 +17,7 @@ var A08Server;
     function handleListen() {
         console.log("Listening");
     }
-    async function handleRequest(_request, _response) {
+    function handleRequest(_request, _response) {
         console.log("I hear voices!");
         /* let url: string = "https://gissose2020jacquelinekoch.herokuapp.com/";
         let query: URLSearchParams = new URLSearchParams(<any>formData);

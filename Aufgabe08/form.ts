@@ -19,7 +19,7 @@ export namespace A08Server {
     console.log("Listening");
   }
 
-  async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
+  function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
     console.log("I hear voices!");
 
     /* let url: string = "https://gissose2020jacquelinekoch.herokuapp.com/";
