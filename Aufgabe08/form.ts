@@ -14,7 +14,7 @@ export namespace A08Server {
     server.addListener("listening", handleListen);
     server.listen(port);
 
-    
+
     function handleListen(): void {
         console.log("Listening");
     }
@@ -22,11 +22,19 @@ export namespace A08Server {
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
         console.log("I hear voices!");
 
+        let formData: FormData = new FormData(document.forms[0]);
+
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
 
         _response.write(_request.url);
 
         _response.end();
+
+        for (let entry of formData) {
+            console.log(entry);
+            console.log("name" + entry[0]);
+            console.log("name" + entry[1]);
+        }
     }
 }
