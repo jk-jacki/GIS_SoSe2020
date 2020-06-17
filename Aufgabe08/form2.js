@@ -7,7 +7,7 @@ var A08Client;
         let formData = new FormData(document.forms[0]);
         let url = "https://gissose2020jacquelinekoch.herokuapp.com/";
         let query = new URLSearchParams(formData);
-        url += url + "?" + query.toString();
+        url = url + "?" + query.toString();
         let response = await fetch(url);
         let reply = await response.url;
         console.log(reply);
