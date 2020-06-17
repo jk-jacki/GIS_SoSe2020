@@ -1,4 +1,6 @@
 import * as Http from "http";
+//import * as Url from "url";
+
 
 export namespace A08Server {
   console.log("Starting server");
@@ -20,7 +22,7 @@ export namespace A08Server {
   async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
     console.log("I hear voices!");
 
-    let url: string = "https://whatever.server/path/file";
+    let url: string = "https://gissose2020jacquelinekoch.herokuapp.com/";
     let query: URLSearchParams = new URLSearchParams(<any>formData);
     url += url + "?" + query.toString();
     await fetch(url);

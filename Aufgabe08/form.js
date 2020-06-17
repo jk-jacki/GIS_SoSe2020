@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.A08Server = void 0;
 const Http = require("http");
+//import * as Url from "url";
 var A08Server;
 (function (A08Server) {
     console.log("Starting server");
@@ -18,7 +19,7 @@ var A08Server;
     }
     async function handleRequest(_request, _response) {
         console.log("I hear voices!");
-        let url = "https://whatever.server/path/file";
+        let url = "https://gissose2020jacquelinekoch.herokuapp.com/";
         let query = new URLSearchParams(formData);
         url += url + "?" + query.toString();
         await fetch(url);
