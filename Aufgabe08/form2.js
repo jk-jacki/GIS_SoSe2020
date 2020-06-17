@@ -1,7 +1,7 @@
 "use strict";
-var A08Server;
-(function (A08Server) {
-    let submitButton = document.getElementById("submitButton");
+var A08Client;
+(function (A08Client) {
+    let submitButton = document.querySelector("#submitButton");
     submitButton.addEventListener("click", communicate);
     async function communicate() {
         let formData = new FormData(document.forms[0]);
@@ -11,5 +11,5 @@ var A08Server;
         await fetch(url);
         console.log(url);
     }
-})(A08Server || (A08Server = {}));
+})(A08Client || (A08Client = {}));
 //# sourceMappingURL=form2.js.map

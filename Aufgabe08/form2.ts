@@ -1,6 +1,6 @@
-namespace A08Server {
+namespace A08Client {
     
-    let submitButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("submitButton");
+    let submitButton: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#submitButton");
     submitButton.addEventListener("click", communicate);
 
     async function communicate(): Promise<void> {
