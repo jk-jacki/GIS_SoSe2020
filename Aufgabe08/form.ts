@@ -2,6 +2,8 @@ import * as Http from "http";
 
 export namespace A08Server {
   console.log("Starting server");
+  let formData: FormData = new FormData(document.forms[0]);
+
   let port: number = Number(process.env.PORT);
   if (!port)
     port = 8100;
@@ -15,8 +17,15 @@ export namespace A08Server {
     console.log("Listening");
   }
 
-  function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
+  async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
     console.log("I hear voices!");
+
+    let url: string = "https://whatever.server/path/file";
+    let query: URLSearchParams = new URLSearchParams(<any>formData);
+    url += url + "?" + query.toString();
+    await fetch(url);
+
+    console.log(url);
 
     _response.setHeader("content-type", "text/html; charset=utf-8");
     _response.setHeader("Access-Control-Allow-Origin", "*");
