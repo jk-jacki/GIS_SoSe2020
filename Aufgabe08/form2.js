@@ -11,6 +11,11 @@ var A08Client;
         let response = await fetch(url);
         let reply = await response.url;
         console.log(reply);
+        for (let entry of query) {
+            console.log(entry);
+            console.log("name: " + entry[0]);
+            console.log("value: " + entry[1]);
+        }
     }
 })(A08Client || (A08Client = {}));
 //# sourceMappingURL=form2.js.map

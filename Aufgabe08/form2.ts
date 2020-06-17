@@ -14,6 +14,12 @@ namespace A08Client {
         let reply: string = await response.url;
 
         console.log(reply);
+
+        for (let entry of query) {
+            console.log(entry);
+            console.log("name: " + entry[0]);
+            console.log("value: " + entry[1]);
+        }
     }
     
 }
