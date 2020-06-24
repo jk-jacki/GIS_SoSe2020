@@ -1,0 +1,50 @@
+body{
+    background: url(laptop-placed-on-white-armchair-in-bedroom-4008298.jpg) no-repeat center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    color: #04005E;
+    font-family: 'Balsamiq Sans', cursive;
+}
+form{
+    background: #FF2079;
+    padding: 20px;
+    border-radius: 20px;
+    opacity: 0.7;
+    height: 300px;
+    width: 300px;
+}  
+h1{
+    margin: 20px 0 30px 0;
+    font-size: 2.5em;
+}
+.inputDiv{
+    margin: 10px 10px 0 10px;
+}
+.inputFeld{
+    width: 100%;
+    height: 40px;
+    border: #04005E solid 3px;
+    border-radius: 5px;
+}
+.placeholder{
+    font-size: 1.2em;
+}
+button{
+    margin: 10px;
+    height: 36px;
+    width: 100px;
+    background-color: #FF2079;
+    border: #04005E solid 3px;
+    border-radius: 5px;
+    color: #04005E;
+    font-weight: bolder;
+    font-size: 1.2em;
+    font-family: 'Balsamiq Sans', cursive;
+}
+button:hover{
+    background-color:  #04005E;
+    color: #FF2079;
+}
