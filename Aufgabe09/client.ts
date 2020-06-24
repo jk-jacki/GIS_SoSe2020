@@ -10,7 +10,7 @@ namespace A09Client {
     async function communicate(): Promise<void> {
 
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://gissose2020jacquelinekoch.herokuapp.com/";
+        let url: string = "https://gissose2020jacquelinekoch.herokuapp.com";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "/html" + "?" + query.toString();
         
@@ -27,7 +27,7 @@ namespace A09Client {
 
     async function handleJSON(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://gissose2020jacquelinekoch.herokuapp.com/";
+        let url: string = "https://gissose2020jacquelinekoch.herokuapp.com";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "/json" + "?" + query.toString();
 

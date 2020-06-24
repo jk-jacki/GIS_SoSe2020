@@ -7,7 +7,7 @@ var A09Client;
     jsonButton.addEventListener("click", handleJSON);
     async function communicate() {
         let formData = new FormData(document.forms[0]);
-        let url = "https://gissose2020jacquelinekoch.herokuapp.com/";
+        let url = "https://gissose2020jacquelinekoch.herokuapp.com";
         let query = new URLSearchParams(formData);
         url = url + "/html" + "?" + query.toString();
         let response = await fetch(url);
@@ -18,7 +18,7 @@ var A09Client;
     }
     async function handleJSON() {
         let formData = new FormData(document.forms[0]);
-        let url = "https://gissose2020jacquelinekoch.herokuapp.com/";
+        let url = "https://gissose2020jacquelinekoch.herokuapp.com";
         let query = new URLSearchParams(formData);
         url = url + "/json" + "?" + query.toString();
         let response = await fetch(url);
