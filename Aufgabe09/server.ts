@@ -33,8 +33,6 @@ export namespace A09Server {
 
         if (_request.url) {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
-            console.log(url);
-
 
             if (url.pathname == "/html") {
                 for (let key in url.query) {
