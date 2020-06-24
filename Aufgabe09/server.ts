@@ -44,7 +44,6 @@ export namespace A09Server {
                 let jsonString: string = JSON.stringify(url.query);
                 _response.write(jsonString);
             }
-
             
         }
 
