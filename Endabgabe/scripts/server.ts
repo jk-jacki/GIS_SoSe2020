@@ -75,7 +75,7 @@ export namespace Endabgabe {
 
             if (url.pathname == "/deleteOne") {
 
-                let jsonString: string = JSON.stringify(orders.deleteOne( {"_id": url.query}));
+                let jsonString: string = JSON.stringify(orders.deleteOne( {"_id": url.query.toString()}));
                 _response.write(jsonString);
 
             }
