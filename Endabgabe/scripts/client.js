@@ -31,10 +31,10 @@ var Endabgabe;
     //Gives Output of current Entries in DB
     async function handleOutput() {
         document.getElementById("requestOrders").style.display = "none";
-        let formData = new FormData(document.forms[0]);
+        //let formData: FormData = new FormData(document.forms[0]);
         let url = "https://gissose2020jacquelinekoch.herokuapp.com";
-        let query = new URLSearchParams(formData);
-        url = url + "/output" + "?" + query.toString();
+        //let query: URLSearchParams = new URLSearchParams(<any>formData);
+        url = url + "/output"; //+ "?" + query.toString();
         let response = await fetch(url);
         let responseString = await response.text();
         let divOutput = document.getElementById("output");
