@@ -49,10 +49,13 @@ var Endabgabe;
                 let jsonString = JSON.stringify(dbInhaltArray);
                 _response.write(jsonString);
             }
-            if (url.pathname == "/deleteOne") {
-                let jsonString = JSON.stringify(orders.deleteOne({ "_id": url.query.toString() }));
+            /* if (url.pathname == "/deleteOne") {
+
+                let jsonString: string = JSON.stringify( orders.deleteOne( { "_id" : ObjectId(url.query) } ));
+
                 _response.write(jsonString);
-            }
+
+            } */
         }
         _response.end();
     }

@@ -117,6 +117,8 @@ namespace Endabgabe {
         let url: string = "https://gissose2020jacquelinekoch.herokuapp.com";
         url += "/output" + "?" + orderID; 
 
+        console.log(url);
+
         await fetch(url);
 
 
