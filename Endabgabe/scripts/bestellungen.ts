@@ -24,6 +24,16 @@ namespace Endabgabe {
         let divOutput: HTMLDivElement = <HTMLDivElement>document.getElementById("output");
 
         for (let index: number = 0; index < myOrders.length; index++) {
+            //HTML Gerüst der Bestellung aufbauen
+            let orderDiv: HTMLDivElement = document.createElement("div");
+            orderDiv.setAttribute("class", "orderSpan");
+            divOutput.appendChild(orderDiv);
+
+            let orderHeading: HTMLHeadingElement = document.createElement("h3");
+            let orderIndex: number = index + 1;
+            orderHeading.innerHTML = "Bestellung " + orderIndex;
+            orderDiv.appendChild(orderHeading);
+
             let outputSpan: HTMLSpanElement = document.createElement("span");
             let ausgabeString: string = "";
 
@@ -53,15 +63,13 @@ namespace Endabgabe {
                 ausgabeString += "Extra: " + getExtra(myOrders[index].Extra) + "<br>";
             }
             
-
-
             outputSpan.innerHTML = ausgabeString;
-            divOutput.appendChild(outputSpan);
+            orderDiv.appendChild(outputSpan);
         }
         
     } 
 
-    function getEisSorten(_indexNummer: string): string | undefined {
+    function getEisSorten(_indexNummer: string): string {
 
         for (let j: number = 0; j < eisSortiment.length; j++) {
             if (_indexNummer == eisSortiment[j].index) {
@@ -71,7 +79,7 @@ namespace Endabgabe {
         return "";
     }
 
-    function getSoßenSorte(_indexNummer: string): string | undefined {
+    function getSoßenSorte(_indexNummer: string): string {
 
         for (let j: number = 0; j < soßenSortiment.length; j++) {
             if (_indexNummer == soßenSortiment[j].index) {
@@ -81,7 +89,7 @@ namespace Endabgabe {
         return "";
     }
 
-    function getExtra(_indexNummer: string): string | undefined {
+    function getExtra(_indexNummer: string): string {
 
         for (let j: number = 0; j < extrasSortiment.length; j++) {
             if (_indexNummer == extrasSortiment[j].index) {

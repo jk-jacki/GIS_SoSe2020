@@ -14,6 +14,14 @@ var Endabgabe;
         console.log(myOrders);
         let divOutput = document.getElementById("output");
         for (let index = 0; index < myOrders.length; index++) {
+            //HTML Gerüst der Bestellung aufbauen
+            let orderDiv = document.createElement("div");
+            orderDiv.setAttribute("class", "orderSpan");
+            divOutput.appendChild(orderDiv);
+            let orderHeading = document.createElement("h3");
+            let orderIndex = index + 1;
+            orderHeading.innerHTML = "Bestellung " + orderIndex;
+            orderDiv.appendChild(orderHeading);
             let outputSpan = document.createElement("span");
             let ausgabeString = "";
             //Behälterausgabe
@@ -38,7 +46,7 @@ var Endabgabe;
                 ausgabeString += "Extra: " + getExtra(myOrders[index].Extra) + "<br>";
             }
             outputSpan.innerHTML = ausgabeString;
-            divOutput.appendChild(outputSpan);
+            orderDiv.appendChild(outputSpan);
         }
     }
     function getEisSorten(_indexNummer) {
