@@ -53,11 +53,26 @@ var Aufgabe07;
                 img.setAttribute("src", Aufgabe07.sortiment[i].image);
                 img.setAttribute("alt", Aufgabe07.sortiment[i].name);
                 div.appendChild(img);
+                let addOrRemove = document.createElement("div");
+                addOrRemove.setAttribute("id", "addOrRemoveDiv");
+                div.appendChild(addOrRemove);
+                let removeOne = document.createElement("button");
+                removeOne.setAttribute("class", "addOrRemove");
+                removeOne.setAttribute("sortimentStelle", i.toString());
+                removeOne.addEventListener("click", handleRemoveOne);
+                addOrRemove.appendChild(removeOne).innerHTML = "-";
+                let addOne = document.createElement("button");
+                addOne.setAttribute("class", "addOrRemove");
+                addOne.setAttribute("sortimentStelle", i.toString());
+                addOne.addEventListener("click", handleAddOne);
+                addOrRemove.appendChild(addOne).innerHTML = "+";
                 let pAmount = document.createElement("p");
                 pAmount.setAttribute("class", "amount");
+                pAmount.setAttribute("id", i.toString() + "amount");
                 div.appendChild(pAmount).innerHTML = "Anzahl Ihrer Produkte: " + localStorage.getItem(i.toString());
                 let pPrice = document.createElement("p");
                 pPrice.setAttribute("class", "price");
+                pPrice.setAttribute("id", i.toString() + "price");
                 div.appendChild(pPrice).innerHTML = "Gesamtpreis: " + Aufgabe07.sortiment[i].preis * parseFloat(localStorage.getItem(i.toString())) + " €";
                 let button = document.createElement("button");
                 button.setAttribute("sortimentStelle", i.toString());
@@ -89,6 +104,31 @@ var Aufgabe07;
         localStorage.removeItem(artikelIndex.toString());
         createCartArticles();
         createCart();
+    }
+    function handleAddOne(_event) {
+        let clickedButton = _event.target;
+        let artikelIndex = clickedButton.getAttribute("sortimentStelle");
+        //Anzahl berechnen
+        let aktuelleAnzahl = parseFloat(localStorage.getItem(artikelIndex));
+        aktuelleAnzahl++;
+        localStorage.setItem(artikelIndex, aktuelleAnzahl.toString());
+        //Einkaufswagen neu laden
+        let amount = document.getElementById(artikelIndex + "amount");
+        amount.innerHTML = "Anzahl Ihrer Produkte: " + localStorage.getItem(aktuelleAnzahl.toString());
+        let price = document.getElementById(artikelIndex.toString() + "price");
+        price.innerHTML = "Gesamtpreis: " + Aufgabe07.sortiment[parseFloat(artikelIndex)].preis * parseFloat(localStorage.getItem(artikelIndex)) + " €";
+    }
+    function handleRemoveOne(_event) {
+        let clickedButton = _event.target;
+        let artikelIndex = clickedButton.getAttribute("sortimentStelle");
+        let aktuelleAnzahl = parseFloat(localStorage.getItem(artikelIndex));
+        if (aktuelleAnzahl == 1) {
+            handleLoeschen(_event);
+        }
+        else {
+            aktuelleAnzahl--;
+            localStorage.setItem(artikelIndex, aktuelleAnzahl.toString());
+        }
     }
     async function getArtikel(_url) {
         let artikelEmpfangen = await fetch(_url);

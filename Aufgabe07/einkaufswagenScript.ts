@@ -66,13 +66,31 @@ namespace Aufgabe07 {
                 img.setAttribute("src", sortiment[i].image);
                 img.setAttribute("alt", sortiment[i].name);
                 div.appendChild(img);
+                
+                let addOrRemove: HTMLDivElement = document.createElement("div");
+                addOrRemove.setAttribute("id", "addOrRemoveDiv");
+                div.appendChild(addOrRemove);
+
+                let removeOne: HTMLButtonElement = document.createElement("button");
+                removeOne.setAttribute("class", "addOrRemove");
+                removeOne.setAttribute("sortimentStelle", i.toString());
+                removeOne.addEventListener("click", handleRemoveOne);
+                addOrRemove.appendChild(removeOne).innerHTML = "-";
+
+                let addOne: HTMLButtonElement = document.createElement("button");
+                addOne.setAttribute("class", "addOrRemove");
+                addOne.setAttribute("sortimentStelle", i.toString());
+                addOne.addEventListener("click", handleAddOne);
+                addOrRemove.appendChild(addOne).innerHTML = "+";
 
                 let pAmount: HTMLParagraphElement = document.createElement("p");
                 pAmount.setAttribute("class", "amount");
+                pAmount.setAttribute("id", i.toString() + "amount");
                 div.appendChild(pAmount).innerHTML = "Anzahl Ihrer Produkte: " + <string>localStorage.getItem(i.toString());
 
                 let pPrice: HTMLParagraphElement = document.createElement("p");
                 pPrice.setAttribute("class", "price");
+                pPrice.setAttribute("id", i.toString() + "price");
                 div.appendChild(pPrice).innerHTML = "Gesamtpreis: " + sortiment[i].preis *  parseFloat(<string>localStorage.getItem(i.toString())) + " €";
 
                 let button: HTMLButtonElement = document.createElement("button");
@@ -111,6 +129,37 @@ namespace Aufgabe07 {
         localStorage.removeItem(artikelIndex.toString());
         createCartArticles();
         createCart();
+    }
+
+    function handleAddOne(_event: Event): void {
+        let clickedButton: HTMLElement = <HTMLElement>_event.target;
+        let artikelIndex: string = <string>clickedButton.getAttribute("sortimentStelle");
+
+        //Anzahl berechnen
+        let aktuelleAnzahl: number = parseFloat(<string>localStorage.getItem(artikelIndex));
+        aktuelleAnzahl++;
+        localStorage.setItem(artikelIndex, aktuelleAnzahl.toString());
+
+        //Einkaufswagen neu laden
+        let amount: HTMLElement = <HTMLElement>document.getElementById(artikelIndex + "amount");
+        amount.innerHTML = "Anzahl Ihrer Produkte: " + <string>localStorage.getItem(aktuelleAnzahl.toString());
+
+        let price: HTMLElement = <HTMLElement>document.getElementById(artikelIndex.toString() + "price");
+        price.innerHTML = "Gesamtpreis: " + sortiment[parseFloat(artikelIndex)].preis *  parseFloat(<string>localStorage.getItem(artikelIndex)) + " €";
+
+    }
+
+    function handleRemoveOne(_event: Event): void {
+        let clickedButton: HTMLElement = <HTMLElement>_event.target;
+        let artikelIndex: string = <string>clickedButton.getAttribute("sortimentStelle");
+        let aktuelleAnzahl: number = parseFloat(<string>localStorage.getItem(artikelIndex));
+        if (aktuelleAnzahl == 1) {
+            handleLoeschen(_event);
+        }
+        else {
+            aktuelleAnzahl--;
+            localStorage.setItem(artikelIndex, aktuelleAnzahl.toString());
+        }
     }
 
     async function getArtikel(_url: RequestInfo): Promise<void> {

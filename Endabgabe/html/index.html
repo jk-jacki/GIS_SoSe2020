@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stars On Ice</title>
+    
+    <link rel="shortcut icon" href="../images/TitleIcon.svg"/>
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="../style/style.css">
+
+   <!--Fonts-->
+   <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">  
+
+    <!--Scripts-->
+    <script src="../scripts/interface.js" defer></script>
+    <script src="../scripts/shop.js" defer></script>
+    <script src="../scripts/client.js" defer></script>
+
+</head>
+
+<body>
+
+    <!--Navigationsleiste-->
+    <nav>
+        <img src="../images/Logo.svg" alt="Logo">
+    </nav>
+
+    <!--Becher oder Waffel?-->
+    <section id="behälterDiv">
+
+        <h1 class="sectionheading">Waffel oder Becher?</h1>
+
+        <div class="options">
+            <div class="behälter" id="chooseWaffel"> <!--bekommt Eventlistener-->
+                <img src="../images/Waffel.svg" alt="Eis in Waffel">
+            </div>
+            <div class="behälter" id="chooseBecher"> <!--bekommt Eventlistener-->
+                <img src="../images/Becher.svg" alt="Eis in Becher">
+            </div>
+        </div>
+
+    </section>
+
+    <!--Eissorten-->
+    <section id="eissortenDiv">
+
+        <h1>Wähl deine Eissorten (max. 4)</h1>
+
+        <div class="options">
+            <div class="flavours">
+                <img src="../images/BlaubeerEis.svg" alt="Blaubeereis">
+                <h3>Blaubeere</h3>
+                <p>+ 0.70€</p>
+                <div class="add">
+                    <button class="addKugelButton">Add</button>
+                </div>
+            </div>
+    
+            <div class="flavours">
+                <img src="../images/ZitronenEis.svg" alt="Zitroneneis">
+                <h3>Zitrone</h3>
+                <p>+ 0.70€</p>
+                <div class="add">
+                    <button class="addKugelButton">Add</button>
+                </div>             
+            </div>
+    
+            <div class="flavours">
+                <img src="../images/ErdbeerEis.svg" alt="Erdbeereis">
+                <h3>Erdbeere</h3>
+                <p>+ 0.70€</p>
+                <div class="add">
+                    <button class="addKugelButton">Add</button>
+                </div>
+            </div>
+    
+            <div class="flavours">
+                <img src="../images/MintEis.svg" alt="Minteis">
+                <h3>Mint</h3>
+                <p>+ 0.70€</p>
+                <div class="add">
+                    <button class="addKugelButton">Add</button>
+                </div>
+            </div>
+    
+            <div class="flavours">
+                <img src="../images/MangoEis.svg" alt="Mangoeis">
+                <h3>Mango</h3>
+                <p>+ 0.70€</p>
+                <div class="add">
+                    <button class="addKugelButton">Add</button>
+                </div>
+            </div>
+    
+            <div class="flavours">
+                <img src="../images/SchlumpfEis.svg" alt="Schlumpfeis">
+                <h3>Schlumpf</h3>
+                <p>+ 0.70€</p>
+                <div class="add">
+                    <button class="addKugelButton">Add</button>
+                </div>
+            </div>
+    
+            <div class="flavours">
+                <img src="../images/SchokoEis.svg" alt="Schokoeis">
+                <h3>Schoko</h3>
+                <p>+ 0.70€</p>
+                <div class="add">
+                    <button class="addKugelButton">Add</button>
+                </div>
+            </div>
+    
+            <div class="flavours">
+                <img src="../images/VanilleEis.svg" alt="Vanilleeis">
+                <h3>Vanille</h3>
+                <p>+ 0.70€</p>
+                <div class="add">
+                    <button class="addKugelButton">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!--Wenn mindestens eine Kugel ausgewählt ist, erscheint hier ein Button mit dem man zur nächsten Kategorie kommt-->
+
+    </section>
+
+    <!--Soßen-->
+    <section id="soßenDiv">
+
+        <h1>Welche Soße darf's sein?</h1>
+
+        <div class="options">
+            <div class="soßen">
+                <img src="../images/HimbeerSoße.svg" alt="Himbeersoße">
+                <h3>Himbeersoße</h3>
+                <p>+ 0.50€</p>
+                <div class="add">
+                    <button class="addSoßeButton">Add</button>
+                </div>
+            </div>
+    
+            <div class="soßen">
+                <img src="../images/CaramelSoße.svg" alt="Karamelsoße">
+                <h3>Karamellsoße</h3>
+                <p>+ 0.50€</p>
+                <div class="add">
+                    <button class="addSoßeButton">Add</button>
+                </div>
+            </div>
+    
+            <div class="soßen">
+                <img src="../images/ErdbeerSoße.svg" alt="Erdbeersoße">
+                <h3>Erdbeersoße</h3>
+                <p>+ 0.50€</p>
+                <div class="add">
+                    <button class="addSoßeButton">Add</button>
+                </div>
+            </div>
+    
+            <div class="soßen">
+                <img src="../images/MangoSoße.svg" alt="Mangosoße">
+                <h3>Mangosoße</h3>
+                <p>+ 0.50€</p>
+                <div class="add">
+                    <button class="addSoßeButton">Add</button>
+                </div>
+            </div>
+    
+            <div class="soßen">
+                <img src="../images/SchokoSoße.svg" alt="Schokosoße">
+                <h3>Schokosoße</h3>
+                <p>+ 0.50€</p>
+                <div class="add">
+                    <button class="addSoßeButton">Add</button>
+                </div>
+            </div>
+    
+            <div class="soßen">
+                <img src="../images/ApfelSoße.svg" alt="Saurer Apfel Soße">
+                <h3>Saurer Apfel Soße</h3>
+                <p>+ 0.50€</p>
+                <div class="add">
+                    <button class="addSoßeButton">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <button id="noSauce" class="skipButton">Will keine Soße</button>
+
+    </section>
+
+    <!--Extras-->
+    <section id="extrasDiv">
+
+        <h1>Feeling Fancy? Pack noch Extras dazu!</h1>
+
+        <div class="options">
+            <div class="extras">
+                <img src="../images/SchokoStreußel.svg" alt="Schokostreußel">
+                <h3>Schokostreußel</h3>
+                <p>+ 0.30€</p>
+                <div class="add">
+                    <button class="addExtraButton">Add</button>
+                </div>
+            </div>
+    
+            <div class="extras">
+                <img src="../images/Sahne.svg" alt="Sahne">
+                <h3>Sahne</h3>
+                <p>+ 0.30€</p>
+                <div class="add">
+                    <button class="addExtraButton">Add</button>
+                </div>
+            </div>
+    
+            <div class="extras">
+                <img src="../images/BunteStreußel.svg" alt="Bunte Streußel">
+                <h3>Bunte Streußel</h3>
+                <p>+ 0.30€</p>
+                <div class="add">
+                    <button class="addExtraButton">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <button id="noExtras" class="skipButton">Fühl mich heute nicht so fancy</button>
+    </section>
+
+
+    <!--Bestellungsformular-->
+    <section id="formDiv">
+        
+        <h1 class="sectionHeading">Der letzte Schritt zu deinem süßen Glück!</h1>
+
+        <div id="preisDiv">
+
+            <p id="preisAnzeige"></p>
+
+        </div>
+
+        <form id="bestellFormular" action="https://gissose2020jacquelinekoch.herokuapp.com" method="GET">
+
+            <div class="input">
+                <label for="lname">Name:</label>
+                <input type="text" placeholder="Mustermann" name="lastname" id="lname" class="inputFeld" required>
+            </div>
+    
+            <div class="input">
+                <label for="fname">Vorname:</label>
+                <input type="text" placeholder="Max" name="firstname" id="fname" class="inputFeld" required>
+            </div>
+    
+            <div class="input">
+                <label for="street">Straße und Hausnummer:</label>
+                <input type="text" placeholder="Musterstraße 1" name="street" id="street" class="inputFeld" required>
+            </div>
+
+            <button type="button" id="bestellButton">Schick`s ab!</button>
+             
+        </form>
+
+        <button type="button" id="deleteButton">Hm, ne lieber doch nicht..</button>
+
+    </section>
+
+    <div id="schrittAnzeige">
+
+        <div class="schrittÜbersicht">
+            <span id="stepOne">1</span>
+            <span id="stepTwo">2</span>
+            <span id="stepThree">3</span>
+            <span id="stepFour">4</span>
+            <span id="stepFive">5</span>
+        </div>
+
+    </div>
+
+    <!--Live Anzeige des Eis-->
+    <div id="bestellAnzeige">
+
+        <!--Erscheint, sobald eine Waffel oder Becher ausgewählt wurde-->
+        <!--Wird durch TypeScript anhand der Daten im LocalStorage erzeugt-->
+
+    </div>
+
+    <footer>
+
+    </footer>
+    
+</body>
+</html>

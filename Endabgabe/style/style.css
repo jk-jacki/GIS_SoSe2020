@@ -1,0 +1,370 @@
+body{
+    margin: 0;
+    background-color: #FBF2F5;
+    color: #8FB5DF;
+    text-align: center;
+    font-family: 'Chewy', cursive;
+}
+
+nav{
+    height: 80px;
+    width: 100%;
+    background-color: #D4E0F9;
+}
+
+nav img{
+    margin-top: -16px;
+    height: 120px;
+    padding: 0;
+}
+
+h1{
+    font-size: 2em;
+    font-weight: lighter;
+}
+
+.options{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.behälter{
+    height: 300px;
+    width: 300px;
+}
+
+.behälter img{
+    opacity: 0.6;
+    transition: opacity 0.5s;
+}
+
+.behälter img:hover{
+    opacity: 1;
+}
+
+#schrittAnzeige{
+    display: flex;
+    justify-content: center;
+}
+
+.add button{
+    height: 30px;
+    width: 50px;
+    border: 2px solid #BF93C4;
+    border-radius: 5px;
+    background-color: #BF93C466;
+    color: #BF93C4;
+    font-family: 'Chewy', cursive;
+}
+
+.add button:hover{
+    background-color: #BF93C4;
+    color: #F7E7DE;
+}
+
+.flavours, .soßen, .extras{
+    width: 180px;
+    height: 260px;
+}
+
+.flavours img, .soßen img, .extras img{
+    height: 80px;
+}
+
+.skipButton, #deleteButton{
+    border: 2px solid #B38F7B;
+    border-radius: 5px;
+    background-color: #D3B9AB66;
+    padding: 5px;
+    color: #B38F7B;
+    font-family: 'Chewy', cursive;
+    font-size: 0.5em;
+}
+
+.skipButton:hover{
+    background-color: #D3B9AB;
+}
+
+.input{
+    margin: 5px auto;
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input input{
+    text-align: center;
+    border-radius: 5px;
+    color: #8FB5DF;
+    font-family: 'Chewy', cursive;
+}
+
+#bestellButton, #deleteButton{
+    margin: 5px 0;
+    border-radius: 5px;
+    font-family: 'Chewy', cursive;
+}
+
+#bestellButton{
+    border: 2px solid #9A61A0;
+    background-color: #BF93C466;
+    color: #9A61A0;
+    font-size: 1.1em;
+    padding: 5px;
+}
+
+#bestellButton:hover{
+    background-color: #BF93C4;   
+}
+
+#deleteButton:hover{
+    background-color: #D3B9AB;
+}
+
+#preisDiv{
+    margin: 40px 0;
+    font-size: 1.4em;
+}
+
+.schrittÜbersicht{
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    color: #DEC3E1;
+    font-size: 1.5em;
+}
+
+/*Default bei Seitenstart, wechselt dann durch beim Durchklicken der Seite*/
+#stepOne{ 
+    color: #BBD5F2;
+}
+
+.liveAnzeige{
+    position: absolute;
+}
+
+#behälter{
+    height: 38px;
+    top: 130px;
+    left: 5%;
+    z-index: 1;
+}
+
+#kugel1{
+    height: 50px;
+    top: 95px;
+    left: 4.2%;
+    z-index: 2;
+}
+
+#soße1{
+    height: 50px;
+    top: 95px;
+    left: 4.2%;
+    z-index: 3;
+}
+
+#streußel1{
+    height: 50px;
+    top: 95px;
+    left: 4.2%;
+    z-index: 4;
+}
+
+#sahne1{
+    height: 50px;
+    top: 82px;
+    left: 4.25%;
+    z-index: 4;
+}
+
+#kugel2{
+    height: 50px;
+    top: 77px;
+    left: 4.2%;
+    z-index: 3;
+}
+
+#soße2{
+    height: 50px;
+    top: 77px;
+    left: 4.2%;
+    z-index: 4;
+}
+
+#streußel2{
+    height: 50px;
+    top: 77px;
+    left: 4.2%;
+    z-index: 5;
+}
+
+#sahne2{
+    height: 50px;
+    top: 64px;
+    left: 4.25%;
+    z-index: 5;
+}
+
+#kugel3{
+    height: 50px;
+    top: 59px;
+    left: 4.2%;
+    z-index: 4;
+}
+
+#soße3{
+    height: 50px;
+    top: 59px;
+    left: 4.2%;
+    z-index: 5;
+}
+
+#streußel3{
+    height: 50px;
+    top: 59px;
+    left: 4.2%;
+    z-index: 6;
+}
+
+#sahne3{
+    height: 50px;
+    top: 46px;
+    left: 4.25%;
+    z-index: 6;
+}
+
+#kugel4{
+    height: 50px;
+    top: 41px;
+    left: 4.2%;
+    z-index: 5;
+}
+
+#soße4{
+    height: 50px;
+    top: 41px;
+    left: 4.2%;
+    z-index: 6;
+}
+
+#streußel4{
+    height: 50px;
+    top: 41px;
+    left: 4.2%;
+    z-index: 7;
+}
+
+#sahne4{
+    height: 50px;
+    top: 28px;
+    left: 4.25%;
+    z-index: 7;
+}
+
+
+
+
+#eissortenDiv, #soßenDiv, #extrasDiv, #formDiv{
+    display: none;
+}
+
+
+
+
+
+/*Smartphone*/
+@media (max-width:641px){
+    h1{
+        font-size: 1.8em;
+    }
+
+    #behälterDiv{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .behälter{
+        height: 150px;
+        width: 150px;
+    }
+} 
+
+/*Tablet*/
+@media(max-width:1024px){
+
+    .skipButton, #deleteButton{
+        font-size: 0.65em;
+    }
+
+    #kugel1{
+        left: 3.8%;
+    }
+
+    #soße1{
+        left: 3.8%;
+    }
+
+    #streußel1{
+        left: 3.8%;
+    }
+
+    #sahne1{
+        left: 3.9%;
+    }
+
+    #kugel2{
+        left: 3.8%;
+    }
+
+    #soße2{
+        left: 3.8%;
+    }
+
+    #streußel2{
+        left: 3.8%;
+    }
+
+    #sahne2{
+        left: 3.9%;
+    }
+
+    #kugel3{
+        left: 3.8%;
+    }
+
+    #soße3{
+        left: 3.8%;
+    }
+
+    #streußel3{
+        left: 3.8%;
+    }
+
+    #sahne3{
+        left: 3.9%;
+    }
+
+    #kugel4{
+        left: 3.8%;
+    }
+
+    #soße4{
+        left: 3.8%;
+    }
+
+    #streußel4{
+        left: 3.8%;
+    }
+
+    #sahne4{
+        left: 3.9%;
+    }
+
+
+
+}

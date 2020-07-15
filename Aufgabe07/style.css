@@ -225,6 +225,16 @@ footer a{
 #preisCartDiv button{
     margin-top: 0;
 }
+
+#addOrRemoveDiv{
+    display: flex;
+    padding: 0 40px;
+}
+
+.addOrRemove{
+    justify-content: space-around;
+    width: 50px;
+}
 /*Mediaqueries*/
 
 @media (min-width:641px) { 
@@ -288,6 +298,10 @@ footer a{
 
     #preisCartDiv{
         width: 600px;
+    }
+
+    #addOrRemoveDiv{
+        padding: 0 108px;
     }
 /*
     .imgcontainer p, .imgcontainer button{

@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "gissose2020",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "@types/mongodb": "^3.5.25",
+    "mongodb": "^3.5.9"
+  },
   "devDependencies": {},
   "scripts": {
-    "start": "node Aufgabe09/server.js"
+    "start": "node Endabgabe/scripts/server.js remote"
   },
   "repository": {
     "type": "git",
