@@ -280,6 +280,17 @@ h1{
     
 }
 
+#output{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.orderSpan + img {
+    height: 50px;
+}
+
 
 /*Smartphone*/
 @media (max-width:641px){

@@ -71,7 +71,7 @@ namespace Endabgabe {
             let deleteImage: HTMLImageElement = document.createElement("img");
             deleteImage.setAttribute("src", "../images/Mülleimer.svg");
             deleteImage.setAttribute("alt", "Button zum Löschen");
-            deleteImage.setAttribute("orderID", myOrders[index]._id);
+            deleteImage.setAttribute("orderid", myOrders[index]._id);
             //deleteImage.addEventListener("click", deleteOne);
             
             outputSpan.innerHTML = ausgabeString;
@@ -114,7 +114,7 @@ namespace Endabgabe {
     /*
     function deleteOne(_event: Event): void {
         let clickedButton: HTMLElement = <HTMLElement>_event.target;
-        let orderID: string = <string>clickedButton.getAttribute("orderID");
+        let orderID: string = <string>clickedButton.getAttribute("orderid");
 
         db.test_users.deleteOne( {"_id": ObjectId("4d512b45cc9374271b02ec4f")});
 
