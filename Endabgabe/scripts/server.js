@@ -50,7 +50,8 @@ var Endabgabe;
                 _response.write(jsonString);
             }
             if (url.pathname == "/deleteOne") {
-                orders.deleteOne({ "_id": url.query });
+                let jsonString = JSON.stringify(orders.deleteOne({ "_id": url.query }));
+                _response.write(jsonString);
             }
         }
         _response.end();
