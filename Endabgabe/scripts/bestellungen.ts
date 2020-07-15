@@ -65,7 +65,7 @@ namespace Endabgabe {
 
             ausgabeString += "Vorname: " + myOrders[index].firstname + "<br>";
             ausgabeString += "Nachname: " + myOrders[index].lastname + "<br>";
-            ausgabeString += "Straße und Hausnummer: " + myOrders[index].street;
+            ausgabeString += "Straße und Hausnummer: " + myOrders[index].street + "<br>";
 
 
             let deleteImage: HTMLImageElement = document.createElement("img");

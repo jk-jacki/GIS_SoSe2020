@@ -287,6 +287,11 @@ h1{
     margin: 10px;
 }
 
+.orderSpan{
+    width: 230px;
+    height: 430px;
+}
+
 .orderSpan + img {
     height: 50px;
 }
