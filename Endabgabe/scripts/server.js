@@ -44,18 +44,20 @@ var Endabgabe;
                 orders.insertOne(url.query);
             }
             if (url.pathname == "/pull") {
-                let jsonString = JSON.stringify(await orders.find().toArray());
+                let dbInhalt = orders.find();
+                let dbInhaltArray = await dbInhalt.toArray();
+                let jsonString = JSON.stringify(dbInhaltArray);
                 _response.write(jsonString);
-                storeOrder(url.query);
+                //storeOrder(url.query);
             }
-            let jsonString = JSON.stringify(url.query);
-            _response.write(jsonString);
-            storeOrder(url.query);
+            /* let jsonString: string = JSON.stringify(url.query);
+            _response.write(jsonString); */
+            //storeOrder(url.query);
         }
         _response.end();
     }
-    function storeOrder(_order) {
+    /* function storeOrder(_order: Order): void {
         orders.insert(_order);
-    }
+    } */
 })(Endabgabe = exports.Endabgabe || (exports.Endabgabe = {}));
 //# sourceMappingURL=server.js.map

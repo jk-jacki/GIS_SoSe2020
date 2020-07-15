@@ -69,16 +69,18 @@ export namespace Endabgabe {
             }
             
             if (url.pathname == "/pull") {
-                let jsonString: string = JSON.stringify(await orders.find().toArray());
+                let dbInhalt: Mongo.Cursor<string> = orders.find();
+                let dbInhaltArray: string[] = await dbInhalt.toArray();
+                let jsonString: string = JSON.stringify(dbInhaltArray);
                 _response.write(jsonString);
 
-                storeOrder(url.query);
+                //storeOrder(url.query);
             } 
 
-            let jsonString: string = JSON.stringify(url.query);
-            _response.write(jsonString);
+            /* let jsonString: string = JSON.stringify(url.query);
+            _response.write(jsonString); */
 
-            storeOrder(url.query);
+            //storeOrder(url.query);
             
         }
 
@@ -86,7 +88,7 @@ export namespace Endabgabe {
         
     }
 
-    function storeOrder(_order: Order): void {
+    /* function storeOrder(_order: Order): void {
         orders.insert(_order);
-    }
+    } */
 }
