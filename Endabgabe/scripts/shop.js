@@ -86,6 +86,21 @@ var Endabgabe;
         }
     }
     function stepTwoToThree() {
+        //Nicht ausgewählte Eiskugeln werden mit 5 markiert
+        if (kugelCounter < 4) {
+            if (kugelCounter == 1) {
+                localStorage.setItem("Kugel2", "5");
+                localStorage.setItem("Kugel3", "5");
+                localStorage.setItem("Kugel4", "5");
+            }
+            else if (kugelCounter == 2) {
+                localStorage.setItem("Kugel3", "5");
+                localStorage.setItem("Kugel4", "5");
+            }
+            else if (kugelCounter == 3) {
+                localStorage.setItem("Kugel4", "5");
+            }
+        }
         gesamtPreis = kugelCounter * 0.7;
         document.getElementById("stepThree").style.color = "#BBD5F2";
         document.getElementById("stepTwo").style.color = "#DEC3E1";

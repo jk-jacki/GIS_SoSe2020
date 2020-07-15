@@ -2,6 +2,7 @@ namespace Endabgabe {
 
     interface Order {
 
+        _id: string;
         Behälter: string;
         Kugel1: string;
         Kugel2: string;
