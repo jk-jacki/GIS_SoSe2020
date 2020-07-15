@@ -44,8 +44,8 @@ namespace Endabgabe {
         let form: HTMLFormElement = <HTMLFormElement>document.getElementById("bestellFormular");
         form.reset();
 
-
-        //deleteOrder();
+        //Nutzer wird zurück zur ersten Seite geschickt
+        deleteOrder();
 
     }
     

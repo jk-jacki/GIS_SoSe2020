@@ -31,7 +31,8 @@ var Endabgabe;
         //reset des Formulars
         let form = document.getElementById("bestellFormular");
         form.reset();
-        //deleteOrder();
+        //Nutzer wird zurück zur ersten Seite geschickt
+        Endabgabe.deleteOrder();
     }
     /*
     //Gives Output of current Entries in DB

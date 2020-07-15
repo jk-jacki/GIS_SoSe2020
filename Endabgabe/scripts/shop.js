@@ -30,8 +30,10 @@ var Endabgabe;
     //#region Übergang von Step 1 zu Step 2
     let waffel = document.getElementById("chooseWaffel");
     waffel.addEventListener("click", handleWaffel);
+    waffel.addEventListener("touch", handleWaffel);
     let becher = document.getElementById("chooseBecher");
     becher.addEventListener("click", handleBecher);
+    becher.addEventListener("touch", handleBecher);
     function handleWaffel() {
         localStorage.setItem("Behälter", "Waffel");
         stepOneToTwo();

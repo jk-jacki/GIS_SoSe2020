@@ -75,13 +75,10 @@ export namespace Endabgabe {
                 storeOrder(url.query);
             } */
 
-            if (url.pathname == "/insert") {
-
-            }
-            
+            /*
             if (url.pathname == "/output") {
 
-            }
+            }*/
 
             let jsonString: string = JSON.stringify(url.query);
             _response.write(jsonString);

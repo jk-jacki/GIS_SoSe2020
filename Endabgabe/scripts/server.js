@@ -50,10 +50,10 @@ var Endabgabe;
 
                 storeOrder(url.query);
             } */
-            if (url.pathname == "/insert") {
-            }
+            /*
             if (url.pathname == "/output") {
-            }
+
+            }*/
             let jsonString = JSON.stringify(url.query);
             _response.write(jsonString);
             storeOrder(url.query);
