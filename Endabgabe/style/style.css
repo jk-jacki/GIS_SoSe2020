@@ -292,7 +292,7 @@ h1{
     height: 430px;
 }
 
-.orderSpan + img {
+.orderSpan img {
     height: 50px;
 }
 
