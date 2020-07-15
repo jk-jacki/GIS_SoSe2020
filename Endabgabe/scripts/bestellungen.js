@@ -8,8 +8,10 @@ var Endabgabe;
         let url = "https://gissose2020jacquelinekoch.herokuapp.com";
         url += "/output";
         let response = await fetch(url);
-        let responseString = await response.text();
+        let responseString = await response.text(); //JSON String 
         document.getElementById("requestOrders").style.display = "none";
+        let myOrders = JSON.parse(responseString);
+        console.log(myOrders);
         let divOutput = document.getElementById("output");
         divOutput.innerHTML = responseString;
     }

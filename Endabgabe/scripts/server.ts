@@ -66,7 +66,7 @@ export namespace Endabgabe {
             }
             
             if (url.pathname == "/output") {
-                let dbInhalt: Mongo.Cursor<string> = orders.find();
+                let dbInhalt: Mongo.Cursor<string> = orders.find(); //liest die Dokumente der Datenbank aus
                 let dbInhaltArray: string[] = await dbInhalt.toArray();
                 let jsonString: string = JSON.stringify(dbInhaltArray);
                 _response.write(jsonString);

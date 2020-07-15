@@ -44,7 +44,7 @@ var Endabgabe;
                 orders.insertOne(url.query);
             }
             if (url.pathname == "/output") {
-                let dbInhalt = orders.find();
+                let dbInhalt = orders.find(); //liest die Dokumente der Datenbank aus
                 let dbInhaltArray = await dbInhalt.toArray();
                 let jsonString = JSON.stringify(dbInhaltArray);
                 _response.write(jsonString);
