@@ -3,7 +3,10 @@ namespace Endabgabe {
     let submitButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("bestellButton");
     submitButton.addEventListener("click", handleInsert);
 
-    //let divOutput: HTMLDivElement = <HTMLDivElement>document.getElementById("output");
+    let requestOrdersButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("requestOrders");
+    requestOrdersButton.addEventListener("click", handleOutput);
+
+    
 
 
     //Inserts Entry in DB
@@ -30,15 +33,7 @@ namespace Endabgabe {
 
         console.log(url);
         
-        await fetch(url); //let response: Response = await fetch(url);
-        //let reply: string = await response.text();
-
-        /*
-        let paragraph: HTMLParagraphElement = document.createElement("p");
-        paragraph.innerHTML = reply;
-        
-        divOutput.appendChild(paragraph);
-        */
+        await fetch(url); 
 
         //reset des Formulars
         let form: HTMLFormElement = <HTMLFormElement>document.getElementById("bestellFormular");
@@ -49,17 +44,22 @@ namespace Endabgabe {
 
     }
     
-    /*
+    
     //Gives Output of current Entries in DB
     async function handleOutput(): Promise<void> {
+        document.getElementById("requestOrders")!.style.display = "none";
+
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "http://localhost:8100"; //"https://gissose2020jacquelinekoch.herokuapp.com";
+        let url: string = "https://gissose2020jacquelinekoch.herokuapp.com";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "/output" + "?" + query.toString();
 
         let response: Response = await fetch(url);
-        let reply: string = await response.json();
-        console.log(reply);
+        let responseString: string = await response.text();
+
+        let divOutput: HTMLDivElement = <HTMLDivElement>document.getElementById("output");
+        divOutput.innerHTML = responseString;
+
     } 
-    */
+    
 }

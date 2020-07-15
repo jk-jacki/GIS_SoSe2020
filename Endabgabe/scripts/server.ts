@@ -53,7 +53,7 @@ export namespace Endabgabe {
         console.log("Listening");
     }
 
-    function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
+    async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
         console.log("I hear voices!");
 
         _response.setHeader("content-type", "text/html; charset=utf-8"); //Erstellt das HTML Dokument
@@ -67,18 +67,13 @@ export namespace Endabgabe {
                 orders.insertOne(url.query);
 
             }
-            /*
+            
             if (url.pathname == "/pull") {
-                let jsonString: string = JSON.stringify(url.query);
+                let jsonString: string = JSON.stringify(await orders.find().toArray());
                 _response.write(jsonString);
 
                 storeOrder(url.query);
-            } */
-
-            /*
-            if (url.pathname == "/output") {
-
-            }*/
+            } 
 
             let jsonString: string = JSON.stringify(url.query);
             _response.write(jsonString);

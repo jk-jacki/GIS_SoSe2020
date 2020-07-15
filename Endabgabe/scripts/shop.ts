@@ -36,12 +36,10 @@ namespace Endabgabe {
     //#region Übergang von Step 1 zu Step 2
     let waffel: HTMLDivElement = <HTMLDivElement>document.getElementById("chooseWaffel");
     waffel.addEventListener("click", handleWaffel);
-    waffel.addEventListener("touchend", handleWaffel);
 
 
     let becher: HTMLDivElement = <HTMLDivElement>document.getElementById("chooseBecher");
     becher.addEventListener("click", handleBecher);
-    becher.addEventListener("touchend", handleBecher);
 
     function handleWaffel(): void {
         localStorage.setItem("Behälter", "Waffel");

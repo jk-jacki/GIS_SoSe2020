@@ -34,7 +34,7 @@ var Endabgabe;
     function handleListen() {
         console.log("Listening");
     }
-    function handleRequest(_request, _response) {
+    async function handleRequest(_request, _response) {
         console.log("I hear voices!");
         _response.setHeader("content-type", "text/html; charset=utf-8"); //Erstellt das HTML Dokument
         _response.setHeader("Access-Control-Allow-Origin", "*");
@@ -43,17 +43,11 @@ var Endabgabe;
             if (url.pathname == "/insert") {
                 orders.insertOne(url.query);
             }
-            /*
             if (url.pathname == "/pull") {
-                let jsonString: string = JSON.stringify(url.query);
+                let jsonString = JSON.stringify(await orders.find().toArray());
                 _response.write(jsonString);
-
                 storeOrder(url.query);
-            } */
-            /*
-            if (url.pathname == "/output") {
-
-            }*/
+            }
             let jsonString = JSON.stringify(url.query);
             _response.write(jsonString);
             storeOrder(url.query);

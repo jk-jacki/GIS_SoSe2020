@@ -264,15 +264,21 @@ h1{
     z-index: 7;
 }
 
-
-
-
+/*Default bei Start der Seite*/
 #eissortenDiv, #soßenDiv, #extrasDiv, #formDiv{
     display: none;
 }
 
 
+/*Seite des Eisladenbesitzers*/
+#welcome{
+    font-weight: bolder;
+}
 
+#requestOrders{
+    padding: 5px;
+    
+}
 
 
 /*Smartphone*/
