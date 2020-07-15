@@ -74,13 +74,13 @@ export namespace Endabgabe {
                 let jsonString: string = JSON.stringify(dbInhaltArray);
                 _response.write(jsonString);
 
-                //storeOrder(url.query);
+                storeOrder(url.query);
             } 
 
             /* let jsonString: string = JSON.stringify(url.query);
             _response.write(jsonString); */
 
-            //storeOrder(url.query);
+            storeOrder(url.query);
             
         }
 
@@ -88,7 +88,7 @@ export namespace Endabgabe {
         
     }
 
-    /* function storeOrder(_order: Order): void {
+    function storeOrder(_order: Order): void {
         orders.insert(_order);
-    } */
+    } 
 }
