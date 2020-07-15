@@ -1,20 +1,5 @@
 namespace Endabgabe {
 
-    interface Order {
-
-        _id: string;
-        Behälter: string;
-        Kugel1: string;
-        Kugel2: string;
-        Kugel3: string;
-        Kugel4: string;
-        Soße: string;
-        Extra: string;
-        lastname: string;
-        firstname: string;
-        street: string;
-
-    }
 
     let requestOrdersButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("requestOrders");
     requestOrdersButton.addEventListener("click", handleOutput);
@@ -34,9 +19,75 @@ namespace Endabgabe {
 
         console.log(myOrders);
 
+
         
         let divOutput: HTMLDivElement = <HTMLDivElement>document.getElementById("output");
-        divOutput.innerHTML = responseString;
+
+        for (let index: number = 0; index < myOrders.length; index++) {
+            let outputSpan: HTMLSpanElement = document.createElement("span");
+            let ausgabeString: string = "";
+
+            //Behälterausgabe
+            ausgabeString += "Behälter: " + myOrders[index].Behälter + "<br>";
+
+            //Eissortenausgabe
+            ausgabeString += "Kugel 1: " + getEisSorten(myOrders[index].Kugel1) + "<br>";            
+
+            if (myOrders[index].Kugel2 != "-1") {
+                ausgabeString += "Kugel 2: " + getEisSorten(myOrders[index].Kugel2) + "<br>";
+            }
+            if (myOrders[index].Kugel3 != "-1") {
+                ausgabeString += "Kugel 3: " + getEisSorten(myOrders[index].Kugel3) + "<br>";
+            }
+            if (myOrders[index].Kugel4 != "-1") {
+                ausgabeString += "Kugel 4: " + getEisSorten(myOrders[index].Kugel4) + "<br>";
+            }
+
+            //Soßenausgabe
+            if (myOrders[index].Soße != "-1") {
+                ausgabeString += "Soße: " + getSoßenSorte(myOrders[index].Soße) + "<br>";
+            }
+
+            //Extraausgabe
+            if (myOrders[index].Extra != "-1") {
+                ausgabeString += "Extra: " + getExtra(myOrders[index].Extra) + "<br>";
+            }
+            
+
+
+            outputSpan.innerHTML = ausgabeString;
+            divOutput.appendChild(outputSpan);
+        }
         
     } 
+
+    function getEisSorten(_indexNummer: string): string | undefined {
+
+        for (let j: number = 0; j < eisSortiment.length; j++) {
+            if (_indexNummer == eisSortiment[j].index) {
+                return eisSortiment[j].alt;
+            }
+        }
+        return "";
+    }
+
+    function getSoßenSorte(_indexNummer: string): string | undefined {
+
+        for (let j: number = 0; j < soßenSortiment.length; j++) {
+            if (_indexNummer == soßenSortiment[j].index) {
+                return soßenSortiment[j].alt;
+            }
+        }
+        return "";
+    }
+
+    function getExtra(_indexNummer: string): string | undefined {
+
+        for (let j: number = 0; j < extrasSortiment.length; j++) {
+            if (_indexNummer == extrasSortiment[j].index) {
+                return extrasSortiment[j].alt;
+            }
+        }
+        return "";
+    }
 }

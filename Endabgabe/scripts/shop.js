@@ -89,16 +89,16 @@ var Endabgabe;
         //Nicht ausgewählte Eiskugeln werden mit 5 markiert
         if (kugelCounter < 4) {
             if (kugelCounter == 1) {
-                localStorage.setItem("Kugel2", "5");
-                localStorage.setItem("Kugel3", "5");
-                localStorage.setItem("Kugel4", "5");
+                localStorage.setItem("Kugel2", "-1");
+                localStorage.setItem("Kugel3", "-1");
+                localStorage.setItem("Kugel4", "-1");
             }
             else if (kugelCounter == 2) {
-                localStorage.setItem("Kugel3", "5");
-                localStorage.setItem("Kugel4", "5");
+                localStorage.setItem("Kugel3", "-1");
+                localStorage.setItem("Kugel4", "-1");
             }
             else if (kugelCounter == 3) {
-                localStorage.setItem("Kugel4", "5");
+                localStorage.setItem("Kugel4", "-1");
             }
         }
         gesamtPreis = kugelCounter * 0.7;
@@ -110,7 +110,7 @@ var Endabgabe;
     }
     //#endregion
     //#region Step 3 zu Step 4
-    document.getElementById("noSauce")?.addEventListener("click", stepThreeToFour);
+    document.getElementById("noSauce")?.addEventListener("click", handleNoSauce);
     function handleAddSoße(_event) {
         gesamtPreis += 0.5;
         let clickedButton = _event.target;
@@ -126,6 +126,10 @@ var Endabgabe;
         localStorage.setItem("Soße", soßenIndex.toString());
         stepThreeToFour();
     }
+    function handleNoSauce() {
+        localStorage.setItem("Soße", "noSauce");
+        stepThreeToFour();
+    }
     function stepThreeToFour() {
         document.getElementById("stepFour").style.color = "#BBD5F2";
         document.getElementById("stepThree").style.color = "#DEC3E1";
@@ -135,7 +139,7 @@ var Endabgabe;
     }
     //#endregion
     //#region Step 4 zu 5
-    document.getElementById("noExtras")?.addEventListener("click", stepFourToFive);
+    document.getElementById("noExtras")?.addEventListener("click", handleNoExtras);
     function handleAddExtra(_event) {
         gesamtPreis += 0.3;
         let clickedButton = _event.target;
@@ -153,6 +157,10 @@ var Endabgabe;
         bestellAnzeige.appendChild(extra);
         //Local Storage
         localStorage.setItem("Extra", extrasIndex.toString());
+        stepFourToFive();
+    }
+    function handleNoExtras() {
+        localStorage.setItem("Extra", "noExtra");
         stepFourToFive();
     }
     function stepFourToFive() {
