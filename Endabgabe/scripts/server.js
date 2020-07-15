@@ -43,7 +43,7 @@ var Endabgabe;
             if (url.pathname == "/insert") {
                 orders.insertOne(url.query);
             }
-            if (url.pathname == "/pull") {
+            if (url.pathname == "/output") {
                 let dbInhalt = orders.find();
                 let dbInhaltArray = await dbInhalt.toArray();
                 let jsonString = JSON.stringify(dbInhaltArray);

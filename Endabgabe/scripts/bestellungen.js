@@ -5,11 +5,11 @@ var Endabgabe;
     requestOrdersButton.addEventListener("click", handleOutput);
     //Gives Output of current Entries in DB
     async function handleOutput() {
-        document.getElementById("requestOrders").style.display = "none";
         let url = "https://gissose2020jacquelinekoch.herokuapp.com";
-        url = url + "/output";
+        url += "/output";
         let response = await fetch(url);
         let responseString = await response.text();
+        document.getElementById("requestOrders").style.display = "none";
         let divOutput = document.getElementById("output");
         divOutput.innerHTML = responseString;
     }

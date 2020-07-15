@@ -65,7 +65,7 @@ export namespace Endabgabe {
 
             }
             
-            if (url.pathname == "/pull") {
+            if (url.pathname == "/output") {
                 let dbInhalt: Mongo.Cursor<string> = orders.find();
                 let dbInhaltArray: string[] = await dbInhalt.toArray();
                 let jsonString: string = JSON.stringify(dbInhaltArray);
