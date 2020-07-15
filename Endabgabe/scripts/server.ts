@@ -4,9 +4,6 @@ import * as Mongo from "mongodb";
 //import { ParsedUrlQuery } from "querystring";
 
 export namespace Endabgabe {
-    interface Order {
-        [type: string]: string | string[] | undefined;
-    }
 
 
     let orders: Mongo.Collection;
@@ -74,13 +71,7 @@ export namespace Endabgabe {
                 let jsonString: string = JSON.stringify(dbInhaltArray);
                 _response.write(jsonString);
 
-                storeOrder(url.query);
             } 
-
-            /* let jsonString: string = JSON.stringify(url.query);
-            _response.write(jsonString); */
-
-            storeOrder(url.query);
             
         }
 
@@ -88,7 +79,5 @@ export namespace Endabgabe {
         
     }
 
-    function storeOrder(_order: Order): void {
-        orders.insert(_order);
-    } 
+   
 }

@@ -48,16 +48,9 @@ var Endabgabe;
                 let dbInhaltArray = await dbInhalt.toArray();
                 let jsonString = JSON.stringify(dbInhaltArray);
                 _response.write(jsonString);
-                storeOrder(url.query);
             }
-            /* let jsonString: string = JSON.stringify(url.query);
-            _response.write(jsonString); */
-            storeOrder(url.query);
         }
         _response.end();
-    }
-    function storeOrder(_order) {
-        orders.insert(_order);
     }
 })(Endabgabe = exports.Endabgabe || (exports.Endabgabe = {}));
 //# sourceMappingURL=server.js.map
