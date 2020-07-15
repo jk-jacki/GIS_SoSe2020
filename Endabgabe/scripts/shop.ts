@@ -160,7 +160,7 @@ namespace Endabgabe {
     }
 
     function handleNoSauce(): void {
-        localStorage.setItem("Soße", "noSauce");
+        localStorage.setItem("Soße", "-1");
         stepThreeToFour();
     }
 
@@ -202,7 +202,7 @@ namespace Endabgabe {
     }
 
     function handleNoExtras(): void {
-        localStorage.setItem("Extra", "noExtra");
+        localStorage.setItem("Extra", "-1");
         stepFourToFive();
     }
 

@@ -127,7 +127,7 @@ var Endabgabe;
         stepThreeToFour();
     }
     function handleNoSauce() {
-        localStorage.setItem("Soße", "noSauce");
+        localStorage.setItem("Soße", "-1");
         stepThreeToFour();
     }
     function stepThreeToFour() {
@@ -160,7 +160,7 @@ var Endabgabe;
         stepFourToFive();
     }
     function handleNoExtras() {
-        localStorage.setItem("Extra", "noExtra");
+        localStorage.setItem("Extra", "-1");
         stepFourToFive();
     }
     function stepFourToFive() {
