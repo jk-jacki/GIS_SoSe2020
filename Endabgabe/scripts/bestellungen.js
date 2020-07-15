@@ -55,6 +55,7 @@ var Endabgabe;
             //deleteImage.addEventListener("click", deleteOne);
             outputSpan.innerHTML = ausgabeString;
             orderDiv.appendChild(outputSpan);
+            orderDiv.appendChild(deleteImage);
         }
     }
     function getEisSorten(_indexNummer) {

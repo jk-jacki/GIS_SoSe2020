@@ -76,6 +76,7 @@ namespace Endabgabe {
             
             outputSpan.innerHTML = ausgabeString;
             orderDiv.appendChild(outputSpan);
+            orderDiv.appendChild(deleteImage);
         }
         
     } 
