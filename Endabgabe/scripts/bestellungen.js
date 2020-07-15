@@ -1,6 +1,7 @@
 "use strict";
 var Endabgabe;
 (function (Endabgabe) {
+    let divOutput = document.getElementById("output");
     let requestOrdersButton = document.getElementById("requestOrders");
     requestOrdersButton.addEventListener("click", handleOutput);
     //Gives Output of current Entries in DB
@@ -12,7 +13,6 @@ var Endabgabe;
         document.getElementById("requestOrders").style.display = "none";
         let myOrders = JSON.parse(responseString);
         console.log(myOrders);
-        let divOutput = document.getElementById("output");
         for (let index = 0; index < myOrders.length; index++) {
             //HTML Gerüst der Bestellung aufbauen
             let orderDiv = document.createElement("div");
@@ -52,7 +52,7 @@ var Endabgabe;
             deleteImage.setAttribute("src", "../images/Mülleimer.svg");
             deleteImage.setAttribute("alt", "Button zum Löschen");
             deleteImage.setAttribute("orderid", myOrders[index]._id);
-            //deleteImage.addEventListener("click", deleteOne);
+            deleteImage.addEventListener("click", deleteOne);
             outputSpan.innerHTML = ausgabeString;
             orderDiv.appendChild(outputSpan);
             orderDiv.appendChild(deleteImage);
@@ -82,15 +82,16 @@ var Endabgabe;
         }
         return "";
     }
-    /*
-    function deleteOne(_event: Event): void {
-        let clickedButton: HTMLElement = <HTMLElement>_event.target;
-        let orderID: string = <string>clickedButton.getAttribute("orderid");
-
-        db.test_users.deleteOne( {"_id": ObjectId("4d512b45cc9374271b02ec4f")});
-
-
+    async function deleteOne(_event) {
+        let clickedButton = _event.target;
+        let orderID = clickedButton.getAttribute("orderid");
+        let url = "https://gissose2020jacquelinekoch.herokuapp.com";
+        url += "/output" + "?" + orderID;
+        await fetch(url);
+        while (divOutput.hasChildNodes()) {
+            divOutput.removeChild(divOutput.firstChild);
+        }
+        handleOutput();
     }
-    */
 })(Endabgabe || (Endabgabe = {}));
 //# sourceMappingURL=bestellungen.js.map

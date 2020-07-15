@@ -72,6 +72,12 @@ export namespace Endabgabe {
                 _response.write(jsonString);
 
             } 
+
+            if (url.pathname == "/deleteOne") {
+
+                orders.deleteOne( {"_id": url.query});
+
+            }
             
         }
 

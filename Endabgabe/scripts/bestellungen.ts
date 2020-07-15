@@ -1,5 +1,5 @@
 namespace Endabgabe {
-
+    let divOutput: HTMLDivElement = <HTMLDivElement>document.getElementById("output");
 
     let requestOrdersButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("requestOrders");
     requestOrdersButton.addEventListener("click", handleOutput);
@@ -20,8 +20,6 @@ namespace Endabgabe {
         console.log(myOrders);
 
 
-        
-        let divOutput: HTMLDivElement = <HTMLDivElement>document.getElementById("output");
 
         for (let index: number = 0; index < myOrders.length; index++) {
             //HTML Gerüst der Bestellung aufbauen
@@ -72,7 +70,7 @@ namespace Endabgabe {
             deleteImage.setAttribute("src", "../images/Mülleimer.svg");
             deleteImage.setAttribute("alt", "Button zum Löschen");
             deleteImage.setAttribute("orderid", myOrders[index]._id);
-            //deleteImage.addEventListener("click", deleteOne);
+            deleteImage.addEventListener("click", deleteOne);
             
             outputSpan.innerHTML = ausgabeString;
             orderDiv.appendChild(outputSpan);
@@ -111,14 +109,22 @@ namespace Endabgabe {
         return "";
     }
 
-    /*
-    function deleteOne(_event: Event): void {
+    
+    async function deleteOne(_event: Event): Promise<void> {
         let clickedButton: HTMLElement = <HTMLElement>_event.target;
         let orderID: string = <string>clickedButton.getAttribute("orderid");
 
-        db.test_users.deleteOne( {"_id": ObjectId("4d512b45cc9374271b02ec4f")});
+        let url: string = "https://gissose2020jacquelinekoch.herokuapp.com";
+        url += "/output" + "?" + orderID; 
+
+        await fetch(url);
 
 
+        while (divOutput.hasChildNodes()) { 
+            divOutput.removeChild(<Node>divOutput.firstChild);
+        }
+
+        handleOutput();
     }
-    */
+    
 }
