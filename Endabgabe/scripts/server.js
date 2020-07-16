@@ -68,7 +68,7 @@ var Endabgabe;
                     "_id": objectID
                 }, {
                     $set: {
-                        "Status": "Versandt"
+                        "street": "sent"
                     }
                 });
             }

@@ -108,7 +108,7 @@ export namespace Endabgabe {
                         {
                             $set :
                             {
-                                "Status" : "Versandt"
+                                "street" : "sent"
                             }
                         }
                     );

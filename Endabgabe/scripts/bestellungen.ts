@@ -63,8 +63,14 @@ namespace Endabgabe {
 
             ausgabeString += "Vorname: " + myOrders[index].firstname + "<br>";
             ausgabeString += "Nachname: " + myOrders[index].lastname + "<br>";
-            ausgabeString += "Straße und Hausnummer: " + myOrders[index].street + "<br>";
 
+            if (myOrders[index].street == "sent") {
+                ausgabeString += "Status: Erfolgreich versandt <br>";
+            }
+            else {
+                ausgabeString += "Straße und Hausnummer: " + myOrders[index].street + "<br>";
+            }
+            
 
             let deleteImage: HTMLImageElement = document.createElement("img");
             deleteImage.setAttribute("src", "../images/Mülleimer.svg");
