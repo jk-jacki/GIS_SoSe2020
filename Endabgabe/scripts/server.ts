@@ -73,19 +73,24 @@ export namespace Endabgabe {
 
             } 
 
-            if (url.pathname == "/deleteOne") { //TODO: Document aus DB löschen
+            if (url.pathname == "/deleteOne") { //TODO: einzelnes Document aus DB löschen
 
                 let query: ParsedUrlQuery = url.query;
                 let id: string = <string>query["id"];
+                console.log(id);
+
                 let objectID: Mongo.ObjectID = new Mongo.ObjectID(id);
                 //let queryString: string = url.query.toString();
-                let jsonString: string = JSON.stringify( orders.deleteOne( { "_id" : objectID } ));  
+
+                //await orders.deleteOne( { "_id" : objectID } );
+                let jsonString: string = JSON.stringify( await orders.deleteOne( { "_id" : objectID } ));  
 
                 _response.write(jsonString);
 
+                
             } 
 
-            if (url.pathname == "/deleteAll") {
+            if (url.pathname == "/deleteAll") { //TODO in Client verlinken
 
                 orders.drop();
                 

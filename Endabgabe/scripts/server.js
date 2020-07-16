@@ -48,15 +48,17 @@ var Endabgabe;
                 let jsonString = JSON.stringify(dbInhaltArray);
                 _response.write(jsonString);
             }
-            if (url.pathname == "/deleteOne") { //TODO: Document aus DB löschen
+            if (url.pathname == "/deleteOne") { //TODO: einzelnes Document aus DB löschen
                 let query = url.query;
                 let id = query["id"];
+                console.log(id);
                 let objectID = new Mongo.ObjectID(id);
                 //let queryString: string = url.query.toString();
-                let jsonString = JSON.stringify(orders.deleteOne({ "_id": objectID }));
+                //await orders.deleteOne( { "_id" : objectID } );
+                let jsonString = JSON.stringify(await orders.deleteOne({ "_id": objectID }));
                 _response.write(jsonString);
             }
-            if (url.pathname == "/deleteAll") {
+            if (url.pathname == "/deleteAll") { //TODO in Client verlinken
                 orders.drop();
             }
         }
