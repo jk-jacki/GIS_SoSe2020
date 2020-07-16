@@ -115,7 +115,7 @@ namespace Endabgabe {
         let orderID: string = <string>clickedButton.getAttribute("orderid");
 
         let url: string = "https://gissose2020jacquelinekoch.herokuapp.com";
-        url += "/output" + "?" + orderID; 
+        url += "/output" + "?" + "id=" + orderID; 
 
         console.log(url);
 

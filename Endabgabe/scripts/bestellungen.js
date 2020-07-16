@@ -86,7 +86,7 @@ var Endabgabe;
         let clickedButton = _event.target;
         let orderID = clickedButton.getAttribute("orderid");
         let url = "https://gissose2020jacquelinekoch.herokuapp.com";
-        url += "/output" + "?" + orderID;
+        url += "/output" + "?" + "id=" + orderID;
         console.log(url);
         await fetch(url);
         while (divOutput.hasChildNodes()) {

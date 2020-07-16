@@ -1,7 +1,7 @@
 import * as Http from "http";
 import * as Url from "url";
 import * as Mongo from "mongodb";
-//import { ParsedUrlQuery } from "querystring";
+import { ParsedUrlQuery } from "querystring";
 
 export namespace Endabgabe {
 
@@ -73,13 +73,23 @@ export namespace Endabgabe {
 
             } 
 
-            /* if (url.pathname == "/deleteOne") {
+            if (url.pathname == "/deleteOne") { //TODO: Document aus DB löschen
 
-                let jsonString: string = JSON.stringify( orders.deleteOne( { "_id" : ObjectId(url.query) } ));  
+                let query: ParsedUrlQuery = url.query;
+                let id: string = <string>query["id"];
+                let objectID: Mongo.ObjectID = new Mongo.ObjectID(id);
+                //let queryString: string = url.query.toString();
+                let jsonString: string = JSON.stringify( orders.deleteOne( { "_id" : objectID } ));  
 
                 _response.write(jsonString);
 
-            } */
+            } 
+
+            if (url.pathname == "/deleteAll") {
+
+                orders.drop();
+                
+            }
             
         }
 

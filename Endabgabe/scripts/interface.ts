@@ -1,117 +1,108 @@
 namespace Endabgabe {
 
-    export interface Eissorten {
+    export interface Sorten {
         index: string;
         alt: string;
         src: string;
     }
 
-    export let sorte01: Eissorten = {
+    export let sorte01: Sorten = {
         index: "0",
         alt: "Blaubeereis",
         src: "../images/BlaubeerEis.svg"
     };
-    export let sorte02: Eissorten = {
+    export let sorte02: Sorten = {
         index: "1",
         alt: "Zitroneneis",
         src: "../images/ZitronenEis.svg"
     };
-    export let sorte03: Eissorten = {
+    export let sorte03: Sorten = {
         index: "2",
         alt: "Erdbeereis",
         src: "../images/ErdbeerEis.svg"
     };
-    export let sorte04: Eissorten = {
+    export let sorte04: Sorten = {
         index: "3",
         alt: "Minteis",
         src: "../images/MintEis.svg"
     };
-    export let sorte05: Eissorten = {
+    export let sorte05: Sorten = {
         index: "4",
         alt: "Mangoeis",
         src: "../images/MangoEis.svg"
     };
-    export let sorte06: Eissorten = {
+    export let sorte06: Sorten = {
         index: "5",
         alt: "Schlumpfeis",
         src: "../images/SchlumpfEis.svg"
     };
-    export let sorte07: Eissorten = {
+    export let sorte07: Sorten = {
         index: "6",
         alt: "Schokoeis",
         src: "../images/SchokoEis.svg"
     };
-    export let sorte08: Eissorten = {
+    export let sorte08: Sorten = {
         index: "7",
         alt: "Vanilleeis",
         src: "../images/VanilleEis.svg"
     };
 
-    export let eisSortiment: Eissorten[] = [sorte01, sorte02, sorte03, sorte04, sorte05, sorte06, sorte07, sorte08];
+    export let eisSortiment: Sorten[] = [sorte01, sorte02, sorte03, sorte04, sorte05, sorte06, sorte07, sorte08];
 
 
-    export interface Soßensorten {
-        index: string;
-        alt: string;
-        src: string;
-    }
 
-    export let soße01: Soßensorten = {
+    export let soße01: Sorten = {
         index: "0",
         alt: "Himbeersoße",
         src: "../images/HimbeerSoße.svg"
     };
-    export let soße02: Soßensorten = {
+    export let soße02: Sorten = {
         index: "1",
         alt: "Karamellsoße",
         src: "../images/CaramelSoße.svg"
     };
-    export let soße03: Soßensorten = {
+    export let soße03: Sorten = {
         index: "2",
         alt: "Erdbeersoße",
         src: "../images/ErdbeerSoße.svg"
     };
-    export let soße04: Soßensorten = {
+    export let soße04: Sorten = {
         index: "3",
         alt: "Mangosoße",
         src: "../images/MangoSoße.svg"
     };
-    export let soße05: Soßensorten = {
+    export let soße05: Sorten = {
         index: "4",
         alt: "Schokosoße",
         src: "../images/SchokoSoße.svg"
     };
-    export let soße06: Soßensorten = {
+    export let soße06: Sorten = {
         index: "5",
         alt: "Apfelsoße",
         src: "../images/ApfelSoße.svg"
     };
 
-    export let soßenSortiment: Soßensorten[] = [soße01, soße02, soße03, soße04, soße05, soße06];
+    export let soßenSortiment: Sorten[] = [soße01, soße02, soße03, soße04, soße05, soße06];
 
-    export interface Extras {
-        index: string;
-        alt: string;
-        src: string;
-    }
+   
 
-    let extra01: Extras = {
+    let extra01: Sorten = {
         index: "0",
         alt: "Schoko Streußel",
         src: "../images/SchokoStreußel.svg"
     };
-    let extra02: Extras = {
+    let extra02: Sorten = {
         index: "1",
         alt: "Sahne",
         src: "../images/Sahne.svg"
     };
-    let extra03: Extras = {
+    let extra03: Sorten = {
         index: "2",
         alt: "Bunte Streußel",
         src: "../images/BunteStreußel.svg"
     };
 
-    export let extrasSortiment: Extras[] = [extra01, extra02, extra03];
+    export let extrasSortiment: Sorten[] = [extra01, extra02, extra03];
 
 
     export interface Order {

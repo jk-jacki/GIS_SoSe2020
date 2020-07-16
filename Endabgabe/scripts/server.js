@@ -4,7 +4,6 @@ exports.Endabgabe = void 0;
 const Http = require("http");
 const Url = require("url");
 const Mongo = require("mongodb");
-//import { ParsedUrlQuery } from "querystring";
 var Endabgabe;
 (function (Endabgabe) {
     let orders;
@@ -49,13 +48,17 @@ var Endabgabe;
                 let jsonString = JSON.stringify(dbInhaltArray);
                 _response.write(jsonString);
             }
-            /* if (url.pathname == "/deleteOne") {
-
-                let jsonString: string = JSON.stringify( orders.deleteOne( { "_id" : ObjectId(url.query) } ));
-
+            if (url.pathname == "/deleteOne") { //TODO: Document aus DB löschen
+                let query = url.query;
+                let id = query["id"];
+                let objectID = new Mongo.ObjectID(id);
+                //let queryString: string = url.query.toString();
+                let jsonString = JSON.stringify(orders.deleteOne({ "_id": objectID }));
                 _response.write(jsonString);
-
-            } */
+            }
+            if (url.pathname == "/deleteAll") {
+                orders.drop();
+            }
         }
         _response.end();
     }
