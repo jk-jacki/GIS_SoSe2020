@@ -345,13 +345,6 @@ h3+span{
         font-size: 1.8em;
     }
 
-    #behälterDiv{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
     .behälter{
         height: 200px;
         width: 200px;
