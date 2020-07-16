@@ -40,7 +40,7 @@ var Endabgabe;
         if (_request.url) {
             let url = Url.parse(_request.url, true);
             if (url.pathname == "/insert") {
-                orders.insertOne(url.query);
+                orders.insertOne(url.query); //Speichert den Eintrag als Document in der DB
             }
             if (url.pathname == "/output") {
                 let dbInhalt = orders.find(); //liest die Dokumente der Datenbank aus
@@ -50,7 +50,7 @@ var Endabgabe;
             }
             if (url.pathname == "/deleteOne") {
                 let query = url.query;
-                let id = query["id"];
+                let id = query["id"]; //wählt den richtigen Teil der query aus
                 console.log(id);
                 let objectID = new Mongo.ObjectID(id);
                 let jsonString = JSON.stringify(await orders.deleteOne({ "_id": objectID }));
@@ -65,10 +65,10 @@ var Endabgabe;
                 console.log(id);
                 let objectID = new Mongo.ObjectID(id);
                 orders.update({
-                    "_id": objectID
+                    "_id": objectID //wählt das Document in der DB aus, welches verändert werden soll
                 }, {
                     $set: {
-                        "street": "sent"
+                        "street": "sent" //verändert den Wert von street
                     }
                 });
             }

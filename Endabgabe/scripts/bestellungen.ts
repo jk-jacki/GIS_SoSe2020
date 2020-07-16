@@ -167,6 +167,16 @@ namespace Endabgabe {
         while (divOutput.hasChildNodes()) { 
             divOutput.removeChild(<Node>divOutput.firstChild);
         }
+
+        let p: HTMLParagraphElement = document.createElement("p");
+        p.innerHTML = "Du hast meine Datenbank gelöscht :( <br> Naja, dann musst du dich halt mit diesem Meme begnügen bis ich dir wieder etwas anzeigen kann.";
+        let gisMeme: HTMLImageElement = document.createElement("img");
+        gisMeme.setAttribute("src", "../GIS_Meme.jpg");
+        gisMeme.setAttribute("alt", "Meme");
+        gisMeme.setAttribute("id", "gisMeme");
+        divOutput.appendChild(p);
+        divOutput.appendChild(gisMeme);
+        
     }
 
     async function editOne(_event: Event): Promise<void> {

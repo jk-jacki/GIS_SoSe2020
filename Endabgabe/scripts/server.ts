@@ -61,7 +61,7 @@ export namespace Endabgabe {
 
             if (url.pathname == "/insert") {
 
-                orders.insertOne(url.query);
+                orders.insertOne(url.query);    //Speichert den Eintrag als Document in der DB
 
             }
             
@@ -76,7 +76,7 @@ export namespace Endabgabe {
             if (url.pathname == "/deleteOne") { 
 
                 let query: ParsedUrlQuery = url.query;
-                let id: string = <string>query["id"];
+                let id: string = <string>query["id"];   //wählt den richtigen Teil der query aus
                 console.log(id);
 
                 let objectID: Mongo.ObjectID = new Mongo.ObjectID(id);
@@ -103,12 +103,12 @@ export namespace Endabgabe {
                 orders.update
                     (
                         {
-                            "_id" : objectID
+                            "_id" : objectID    //wählt das Document in der DB aus, welches verändert werden soll
                         },
                         {
                             $set :
                             {
-                                "street" : "sent"
+                                "street" : "sent"   //verändert den Wert von street
                             }
                         }
                     );

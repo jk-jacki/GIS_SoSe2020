@@ -125,6 +125,14 @@ var Endabgabe;
         while (divOutput.hasChildNodes()) {
             divOutput.removeChild(divOutput.firstChild);
         }
+        let p = document.createElement("p");
+        p.innerHTML = "Du hast meine Datenbank gelöscht :( <br> Naja, dann musst du dich halt mit diesem Meme begnügen bis ich dir wieder etwas anzeigen kann.";
+        let gisMeme = document.createElement("img");
+        gisMeme.setAttribute("src", "../GIS_Meme.jpg");
+        gisMeme.setAttribute("alt", "Meme");
+        gisMeme.setAttribute("id", "gisMeme");
+        divOutput.appendChild(p);
+        divOutput.appendChild(gisMeme);
     }
     async function editOne(_event) {
         let clickedButton = _event.target;

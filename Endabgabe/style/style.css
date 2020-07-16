@@ -337,6 +337,14 @@ h3+span{
     flex-wrap: wrap;
 }
 
+#output>p{
+    width: 100%;
+}
+
+#gisMeme{
+    height: 400px;
+}
+
 
 
 /*Smartphone*/
@@ -458,6 +466,10 @@ h3+span{
     #sahne4{
         height: 26px;
         top: 18px;
+    }
+
+    #gisMeme{
+        height: 260px;
     }
 
 
