@@ -314,7 +314,6 @@ h3+span{
 
 .orderSpan img:hover{
     opacity: 1;
-    height: 50px;
 }
 
 .bestellungenButton{
@@ -374,10 +373,6 @@ h3+span{
 
     .orderSpan img {
         height: 30px;
-    }
-
-    .orderSpan img:hover {
-        height: 35px;
     }
 
     #behälter{

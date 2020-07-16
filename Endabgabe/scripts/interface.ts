@@ -6,42 +6,42 @@ namespace Endabgabe {
         src: string;
     }
 
-    export let sorte01: Sorten = {
+    let sorte01: Sorten = {
         index: "0",
         alt: "Blaubeereis",
         src: "../images/BlaubeerEis.svg"
     };
-    export let sorte02: Sorten = {
+    let sorte02: Sorten = {
         index: "1",
         alt: "Zitroneneis",
         src: "../images/ZitronenEis.svg"
     };
-    export let sorte03: Sorten = {
+    let sorte03: Sorten = {
         index: "2",
         alt: "Erdbeereis",
         src: "../images/ErdbeerEis.svg"
     };
-    export let sorte04: Sorten = {
+    let sorte04: Sorten = {
         index: "3",
         alt: "Minteis",
         src: "../images/MintEis.svg"
     };
-    export let sorte05: Sorten = {
+    let sorte05: Sorten = {
         index: "4",
         alt: "Mangoeis",
         src: "../images/MangoEis.svg"
     };
-    export let sorte06: Sorten = {
+    let sorte06: Sorten = {
         index: "5",
         alt: "Schlumpfeis",
         src: "../images/SchlumpfEis.svg"
     };
-    export let sorte07: Sorten = {
+    let sorte07: Sorten = {
         index: "6",
         alt: "Schokoeis",
         src: "../images/SchokoEis.svg"
     };
-    export let sorte08: Sorten = {
+    let sorte08: Sorten = {
         index: "7",
         alt: "Vanilleeis",
         src: "../images/VanilleEis.svg"
@@ -51,32 +51,32 @@ namespace Endabgabe {
 
 
 
-    export let soße01: Sorten = {
+    let soße01: Sorten = {
         index: "0",
         alt: "Himbeersoße",
         src: "../images/HimbeerSoße.svg"
     };
-    export let soße02: Sorten = {
+    let soße02: Sorten = {
         index: "1",
         alt: "Karamellsoße",
         src: "../images/CaramelSoße.svg"
     };
-    export let soße03: Sorten = {
+    let soße03: Sorten = {
         index: "2",
         alt: "Erdbeersoße",
         src: "../images/ErdbeerSoße.svg"
     };
-    export let soße04: Sorten = {
+    let soße04: Sorten = {
         index: "3",
         alt: "Mangosoße",
         src: "../images/MangoSoße.svg"
     };
-    export let soße05: Sorten = {
+    let soße05: Sorten = {
         index: "4",
         alt: "Schokosoße",
         src: "../images/SchokoSoße.svg"
     };
-    export let soße06: Sorten = {
+    let soße06: Sorten = {
         index: "5",
         alt: "Apfelsoße",
         src: "../images/ApfelSoße.svg"

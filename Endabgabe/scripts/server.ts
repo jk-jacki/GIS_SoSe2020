@@ -91,6 +91,28 @@ export namespace Endabgabe {
                 orders.drop();
                 
             }
+
+            if (url.pathname == "/edit") {
+
+                let query: ParsedUrlQuery = url.query;
+                let id: string = <string>query["id"];
+                console.log(id);
+
+                let objectID: Mongo.ObjectID = new Mongo.ObjectID(id);
+
+                orders.update
+                    (
+                        {
+                            "_id" : objectID
+                        },
+                        {
+                            $set :
+                            {
+                                "Status" : "Versandt"
+                            }
+                        }
+                    );
+            }
             
         }
 

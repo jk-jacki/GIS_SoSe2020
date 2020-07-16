@@ -59,6 +59,19 @@ var Endabgabe;
             if (url.pathname == "/deleteAll") {
                 orders.drop();
             }
+            if (url.pathname == "/edit") {
+                let query = url.query;
+                let id = query["id"];
+                console.log(id);
+                let objectID = new Mongo.ObjectID(id);
+                orders.update({
+                    "_id": objectID
+                }, {
+                    $set: {
+                        "Status": "Versandt"
+                    }
+                });
+            }
         }
         _response.end();
     }

@@ -71,10 +71,17 @@ namespace Endabgabe {
             deleteImage.setAttribute("alt", "Button zum Löschen");
             deleteImage.setAttribute("orderid", myOrders[index]._id);
             deleteImage.addEventListener("click", deleteOne);
+
+            let packageImage: HTMLImageElement = document.createElement("img");
+            packageImage.setAttribute("src", "../images/Paket.svg");
+            packageImage.setAttribute("alt", "Paket");
+            packageImage.setAttribute("orderid", myOrders[index]._id);
+            packageImage.addEventListener("click", editOne);
             
             outputSpan.innerHTML = ausgabeString;
             orderDiv.appendChild(outputSpan);
             orderDiv.appendChild(deleteImage);
+            orderDiv.appendChild(packageImage);
         }
 
         //Erzeugt div für nachfolgende Button
@@ -138,8 +145,6 @@ namespace Endabgabe {
         let url: string = "https://gissose2020jacquelinekoch.herokuapp.com";
         url += "/deleteOne" + "?" + "id=" + orderID; 
 
-        console.log(url);
-
         await fetch(url);
 
         update();
@@ -157,6 +162,20 @@ namespace Endabgabe {
             divOutput.removeChild(<Node>divOutput.firstChild);
         }
     }
+
+    async function editOne(_event: Event): Promise<void> {
+        let clickedButton: HTMLElement = <HTMLElement>_event.target;
+        let orderID: string = <string>clickedButton.getAttribute("orderid");
+
+        let url: string = "https://gissose2020jacquelinekoch.herokuapp.com";
+        url += "/edit" + "?" + "id=" + orderID; 
+
+        await fetch(url);
+
+        update();
+
+    }
+
     
     function update(): void {
         while (divOutput.hasChildNodes()) { 

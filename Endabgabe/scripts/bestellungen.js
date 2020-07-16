@@ -53,9 +53,15 @@ var Endabgabe;
             deleteImage.setAttribute("alt", "Button zum Löschen");
             deleteImage.setAttribute("orderid", myOrders[index]._id);
             deleteImage.addEventListener("click", deleteOne);
+            let packageImage = document.createElement("img");
+            packageImage.setAttribute("src", "../images/Paket.svg");
+            packageImage.setAttribute("alt", "Paket");
+            packageImage.setAttribute("orderid", myOrders[index]._id);
+            packageImage.addEventListener("click", editOne);
             outputSpan.innerHTML = ausgabeString;
             orderDiv.appendChild(outputSpan);
             orderDiv.appendChild(deleteImage);
+            orderDiv.appendChild(packageImage);
         }
         //Erzeugt div für nachfolgende Button
         let buttonDiv = document.createElement("div");
@@ -104,7 +110,6 @@ var Endabgabe;
         let orderID = clickedButton.getAttribute("orderid");
         let url = "https://gissose2020jacquelinekoch.herokuapp.com";
         url += "/deleteOne" + "?" + "id=" + orderID;
-        console.log(url);
         await fetch(url);
         update();
     }
@@ -115,6 +120,14 @@ var Endabgabe;
         while (divOutput.hasChildNodes()) {
             divOutput.removeChild(divOutput.firstChild);
         }
+    }
+    async function editOne(_event) {
+        let clickedButton = _event.target;
+        let orderID = clickedButton.getAttribute("orderid");
+        let url = "https://gissose2020jacquelinekoch.herokuapp.com";
+        url += "/edit" + "?" + "id=" + orderID;
+        await fetch(url);
+        update();
     }
     function update() {
         while (divOutput.hasChildNodes()) {
