@@ -77,11 +77,26 @@ namespace Endabgabe {
             orderDiv.appendChild(deleteImage);
         }
 
+        //Erzeugt div für nachfolgende Button
+        let buttonDiv: HTMLDivElement = document.createElement("div");
+        buttonDiv.setAttribute("id", "buttonDiv");
+        document.getElementById("main")!.appendChild(buttonDiv);
+
+        //Erzeugt delete-All Button
         let deleteAllButton: HTMLButtonElement = document.createElement("button");
         deleteAllButton.setAttribute("class", "bestellungenButton");
+        deleteAllButton.setAttribute("id", "deleteAll");
         deleteAllButton.innerHTML = "Alle Bestellungen löschen";
         deleteAllButton.addEventListener("click", deleteAll);
-        divOutput.appendChild(deleteAllButton);
+        buttonDiv.appendChild(deleteAllButton);
+
+        //Erzeugt update Button
+        let updateButton: HTMLButtonElement = document.createElement("button");
+        updateButton.setAttribute("class", "bestellungenButton");
+        updateButton.innerHTML = "Aktualisieren";
+        updateButton.addEventListener("click", update);
+        buttonDiv.appendChild(updateButton);
+
         
     } 
 
@@ -127,12 +142,8 @@ namespace Endabgabe {
 
         await fetch(url);
 
-
-        while (divOutput.hasChildNodes()) { 
-            divOutput.removeChild(<Node>divOutput.firstChild);
-        }
-
-        handleOutput();
+        update();
+        
     }
 
     async function deleteAll(): Promise<void> {
@@ -147,4 +158,15 @@ namespace Endabgabe {
         }
     }
     
+    function update(): void {
+        while (divOutput.hasChildNodes()) { 
+            divOutput.removeChild(<Node>divOutput.firstChild);
+        }
+
+        if (document.getElementById("buttonDiv") != null) {
+            document.getElementById("main")?.removeChild(<Node>document.getElementById("buttonDiv"));
+        }
+
+        handleOutput();
+    }
 }

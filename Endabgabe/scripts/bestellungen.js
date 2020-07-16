@@ -57,11 +57,23 @@ var Endabgabe;
             orderDiv.appendChild(outputSpan);
             orderDiv.appendChild(deleteImage);
         }
+        //Erzeugt div für nachfolgende Button
+        let buttonDiv = document.createElement("div");
+        buttonDiv.setAttribute("id", "buttonDiv");
+        document.getElementById("main").appendChild(buttonDiv);
+        //Erzeugt delete-All Button
         let deleteAllButton = document.createElement("button");
         deleteAllButton.setAttribute("class", "bestellungenButton");
+        deleteAllButton.setAttribute("id", "deleteAll");
         deleteAllButton.innerHTML = "Alle Bestellungen löschen";
         deleteAllButton.addEventListener("click", deleteAll);
-        divOutput.appendChild(deleteAllButton);
+        buttonDiv.appendChild(deleteAllButton);
+        //Erzeugt update Button
+        let updateButton = document.createElement("button");
+        updateButton.setAttribute("class", "bestellungenButton");
+        updateButton.innerHTML = "Aktualisieren";
+        updateButton.addEventListener("click", update);
+        buttonDiv.appendChild(updateButton);
     }
     function getEisSorten(_indexNummer) {
         for (let j = 0; j < Endabgabe.eisSortiment.length; j++) {
@@ -94,10 +106,7 @@ var Endabgabe;
         url += "/deleteOne" + "?" + "id=" + orderID;
         console.log(url);
         await fetch(url);
-        while (divOutput.hasChildNodes()) {
-            divOutput.removeChild(divOutput.firstChild);
-        }
-        handleOutput();
+        update();
     }
     async function deleteAll() {
         let url = "https://gissose2020jacquelinekoch.herokuapp.com";
@@ -106,6 +115,15 @@ var Endabgabe;
         while (divOutput.hasChildNodes()) {
             divOutput.removeChild(divOutput.firstChild);
         }
+    }
+    function update() {
+        while (divOutput.hasChildNodes()) {
+            divOutput.removeChild(divOutput.firstChild);
+        }
+        if (document.getElementById("buttonDiv") != null) {
+            document.getElementById("main")?.removeChild(document.getElementById("buttonDiv"));
+        }
+        handleOutput();
     }
 })(Endabgabe || (Endabgabe = {}));
 //# sourceMappingURL=bestellungen.js.map

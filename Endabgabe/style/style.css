@@ -271,13 +271,24 @@ h1{
 
 
 /*Seite des Eisladenbesitzers*/
-#welcome{
+main>h1{
     font-weight: bolder;
 }
 
-#requestOrders{
+h1+button{
+    font-size: 1.5em;
+    font-weight: bolder;
     padding: 5px;
-    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #BF93C4;
+}
+
+h3+span{
+    display: inline-block;
+    height: 260px;
 }
 
 #output{
@@ -288,13 +299,44 @@ h1{
 }
 
 .orderSpan{
+    margin: 5px;
     width: 230px;
-    height: 430px;
+    height: 380px;
+    border: 5px solid #BF93C466;
+    border-radius: 5px;
 }
 
 .orderSpan img {
+    height: 45px;
+    opacity: 0.6;
+    transition: ease-in 0.3s;
+}
+
+.orderSpan img:hover{
+    opacity: 1;
     height: 50px;
 }
+
+.bestellungenButton{
+    padding: 5px;
+    border: 2px solid #BF93C4;
+    border-radius: 5px;
+    background-color: #BF93C466;
+    color: #BF93C4;
+    font-family: 'Chewy', cursive;
+}
+
+.bestellungenButton:hover{
+    background-color: #BF93C4;
+    color: #F7E7DE;
+}
+
+#buttonDiv{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 
 
 /*Smartphone*/
@@ -311,9 +353,125 @@ h1{
     }
 
     .behälter{
-        height: 150px;
-        width: 150px;
+        height: 200px;
+        width: 200px;
     }
+
+    main>h1{
+        font-size: 1.2em;
+    }
+
+    .orderSpan h3{
+        margin: 10px;
+    }
+
+    h3+span{
+        height: 180px;
+    }
+
+    .orderSpan{
+        height: 280px;
+        width: 200px;
+    }
+
+    .orderSpan span{
+        font-size: 0.8em;
+    }
+
+    .orderSpan img {
+        height: 30px;
+    }
+
+    .orderSpan img:hover {
+        height: 35px;
+    }
+
+    #behälter{
+        height: 20px;
+        top: 75px;
+    }
+    
+    #kugel1{
+        height: 26px;
+        top: 55px;
+    }
+    
+    #soße1{
+        height: 26px;
+        top: 55px;
+    }
+    
+    #streußel1{
+        height: 26px;
+        top: 55px;
+    }
+    
+    #sahne1{
+        height: 26px;
+        top: 48px;
+    }
+    
+    #kugel2{
+        height: 26px;
+        top: 45px;
+    }
+    
+    #soße2{
+        height: 26px;
+        top: 45px;
+    }
+    
+    #streußel2{
+        height: 26px;
+        top: 45px;
+    }
+    
+    #sahne2{
+        height: 26px;
+        top: 38px;
+    }
+    
+    #kugel3{
+        height: 26px;
+        top: 35px;
+    }
+    
+    #soße3{
+        height: 26px;
+        top: 35px;
+    }
+    
+    #streußel3{
+        height: 26px;
+        top: 35px;
+    }
+    
+    #sahne3{
+        height: 26px;
+        top: 28px;
+    }
+    
+    #kugel4{
+        height: 26px;
+        top: 25px;
+    }
+    
+    #soße4{
+        height: 26px;
+        top: 25px;
+    }
+    
+    #streußel4{
+        height: 26px;
+        top: 25px;
+    }
+    
+    #sahne4{
+        height: 26px;
+        top: 18px;
+    }
+
+
 } 
 
 /*Tablet*/
@@ -386,7 +544,5 @@ h1{
     #sahne4{
         left: 3.9%;
     }
-
-
 
 }
