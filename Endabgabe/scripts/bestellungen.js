@@ -57,6 +57,11 @@ var Endabgabe;
             orderDiv.appendChild(outputSpan);
             orderDiv.appendChild(deleteImage);
         }
+        let deleteAllButton = document.createElement("button");
+        deleteAllButton.setAttribute("class", "bestellungenButton");
+        deleteAllButton.innerHTML = "Alle Bestellungen löschen";
+        deleteAllButton.addEventListener("click", deleteAll);
+        divOutput.appendChild(deleteAllButton);
     }
     function getEisSorten(_indexNummer) {
         for (let j = 0; j < Endabgabe.eisSortiment.length; j++) {
@@ -86,13 +91,21 @@ var Endabgabe;
         let clickedButton = _event.target;
         let orderID = clickedButton.getAttribute("orderid");
         let url = "https://gissose2020jacquelinekoch.herokuapp.com";
-        url += "/output" + "?" + "id=" + orderID;
+        url += "/deleteOne" + "?" + "id=" + orderID;
         console.log(url);
         await fetch(url);
         while (divOutput.hasChildNodes()) {
             divOutput.removeChild(divOutput.firstChild);
         }
         handleOutput();
+    }
+    async function deleteAll() {
+        let url = "https://gissose2020jacquelinekoch.herokuapp.com";
+        url += "/deleteAll";
+        await fetch(url);
+        while (divOutput.hasChildNodes()) {
+            divOutput.removeChild(divOutput.firstChild);
+        }
     }
 })(Endabgabe || (Endabgabe = {}));
 //# sourceMappingURL=bestellungen.js.map

@@ -76,6 +76,12 @@ namespace Endabgabe {
             orderDiv.appendChild(outputSpan);
             orderDiv.appendChild(deleteImage);
         }
+
+        let deleteAllButton: HTMLButtonElement = document.createElement("button");
+        deleteAllButton.setAttribute("class", "bestellungenButton");
+        deleteAllButton.innerHTML = "Alle Bestellungen löschen";
+        deleteAllButton.addEventListener("click", deleteAll);
+        divOutput.appendChild(deleteAllButton);
         
     } 
 
@@ -115,7 +121,7 @@ namespace Endabgabe {
         let orderID: string = <string>clickedButton.getAttribute("orderid");
 
         let url: string = "https://gissose2020jacquelinekoch.herokuapp.com";
-        url += "/output" + "?" + "id=" + orderID; 
+        url += "/deleteOne" + "?" + "id=" + orderID; 
 
         console.log(url);
 
@@ -127,6 +133,18 @@ namespace Endabgabe {
         }
 
         handleOutput();
+    }
+
+    async function deleteAll(): Promise<void> {
+        let url: string = "https://gissose2020jacquelinekoch.herokuapp.com";
+        url += "/deleteAll" ; 
+
+        await fetch(url);
+
+
+        while (divOutput.hasChildNodes()) { 
+            divOutput.removeChild(<Node>divOutput.firstChild);
+        }
     }
     
 }
