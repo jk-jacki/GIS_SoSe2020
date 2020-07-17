@@ -6,9 +6,9 @@ namespace Endabgabe {
 
     //Gives Output of current Entries in DB
     async function handleOutput(): Promise<void> {
-        
+
         let url: string = "https://gissose2020jacquelinekoch.herokuapp.com";
-        url += "/output"; 
+        url += "/output";
 
         let response: Response = await fetch(url);
         let responseString: string = await response.text(); //JSON String 
@@ -39,7 +39,7 @@ namespace Endabgabe {
             ausgabeString += "Behälter: " + myOrders[index].Behälter + "<br>";
 
             //Eissortenausgabe
-            ausgabeString += "Kugel 1: " + getEisSorten(myOrders[index].Kugel1) + "<br>";            
+            ausgabeString += "Kugel 1: " + getEisSorten(myOrders[index].Kugel1) + "<br>";
 
             if (myOrders[index].Kugel2 != "-1") {
                 ausgabeString += "Kugel 2: " + getEisSorten(myOrders[index].Kugel2) + "<br>";
@@ -70,7 +70,7 @@ namespace Endabgabe {
             else {
                 ausgabeString += "Straße und Hausnummer: " + myOrders[index].street + "<br>";
             }
-            
+
 
             let deleteImage: HTMLImageElement = document.createElement("img");
             deleteImage.setAttribute("src", "../images/Mülleimer.svg");
@@ -83,7 +83,7 @@ namespace Endabgabe {
             packageImage.setAttribute("alt", "Paket");
             packageImage.setAttribute("orderid", myOrders[index]._id);
             packageImage.addEventListener("click", editOne);
-            
+
             outputSpan.innerHTML = ausgabeString;
             orderDiv.appendChild(outputSpan);
             orderDiv.appendChild(deleteImage);
@@ -110,8 +110,8 @@ namespace Endabgabe {
         updateButton.addEventListener("click", update);
         buttonDiv.appendChild(updateButton);
 
-        
-    } 
+
+    }
 
     function getEisSorten(_indexNummer: string): string {
 
@@ -143,28 +143,28 @@ namespace Endabgabe {
         return "";
     }
 
-    
+
     async function deleteOne(_event: Event): Promise<void> {
         let clickedButton: HTMLElement = <HTMLElement>_event.target;
         let orderID: string = <string>clickedButton.getAttribute("orderid");
 
         let url: string = "https://gissose2020jacquelinekoch.herokuapp.com";
-        url += "/deleteOne" + "?" + "id=" + orderID; 
+        url += "/deleteOne" + "?" + "id=" + orderID;
 
         await fetch(url);
 
         update();
-        
+
     }
 
     async function deleteAll(): Promise<void> {
         let url: string = "https://gissose2020jacquelinekoch.herokuapp.com";
-        url += "/deleteAll" ; 
+        url += "/deleteAll";
 
         await fetch(url);
 
 
-        while (divOutput.hasChildNodes()) { 
+        while (divOutput.hasChildNodes()) {
             divOutput.removeChild(<Node>divOutput.firstChild);
         }
 
@@ -176,7 +176,7 @@ namespace Endabgabe {
         gisMeme.setAttribute("id", "gisMeme");
         divOutput.appendChild(p);
         divOutput.appendChild(gisMeme);
-        
+
     }
 
     async function editOne(_event: Event): Promise<void> {
@@ -184,7 +184,7 @@ namespace Endabgabe {
         let orderID: string = <string>clickedButton.getAttribute("orderid");
 
         let url: string = "https://gissose2020jacquelinekoch.herokuapp.com";
-        url += "/edit" + "?" + "id=" + orderID; 
+        url += "/edit" + "?" + "id=" + orderID;
 
         await fetch(url);
 
@@ -192,9 +192,9 @@ namespace Endabgabe {
 
     }
 
-    
+
     function update(): void {
-        while (divOutput.hasChildNodes()) { 
+        while (divOutput.hasChildNodes()) {
             divOutput.removeChild(<Node>divOutput.firstChild);
         }
 

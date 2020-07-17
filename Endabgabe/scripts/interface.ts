@@ -84,7 +84,7 @@ namespace Endabgabe {
 
     export let soßenSortiment: Sorten[] = [soße01, soße02, soße03, soße04, soße05, soße06];
 
-   
+
 
     let extra01: Sorten = {
         index: "0",

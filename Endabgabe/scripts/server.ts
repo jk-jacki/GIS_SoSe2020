@@ -21,7 +21,7 @@ export namespace Endabgabe {
 
     startServer(port);
     connectToDatabase(databaseUrl);
-    
+
     function startServer(_port: number | string): void {
         console.log("Starting server");
 
@@ -36,7 +36,7 @@ export namespace Endabgabe {
     }
 
     async function connectToDatabase(_url: string): Promise<void> {
-        let options: Mongo.MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true};
+        let options: Mongo.MongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
         let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
 
         await mongoClient.connect();
@@ -44,7 +44,7 @@ export namespace Endabgabe {
         orders = mongoClient.db("Eisshop").collection("Orders");
         console.log("Database connection", orders != undefined);
     }
-    
+
 
     function handleListen(): void {
         console.log("Listening");
@@ -64,61 +64,63 @@ export namespace Endabgabe {
                 orders.insertOne(url.query);    //Speichert den Eintrag als Document in der DB
 
             }
-            
+
             if (url.pathname == "/output") {
                 let dbInhalt: Mongo.Cursor<string> = orders.find(); //liest die Dokumente der Datenbank aus
                 let dbInhaltArray: string[] = await dbInhalt.toArray();
                 let jsonString: string = JSON.stringify(dbInhaltArray);
                 _response.write(jsonString);
 
-            } 
+            }
 
-            if (url.pathname == "/deleteOne") { 
+            if (url.pathname == "/deleteOne") {
 
+                let objectID: Mongo.ObjectID = getID();
+
+                let jsonString: string = JSON.stringify(await orders.deleteOne({ "_id": objectID }));
+
+                _response.write(jsonString);
+
+            }
+
+            if (url.pathname == "/deleteAll") {
+
+                orders.drop();
+
+            }
+
+            if (url.pathname == "/edit") {
+
+                let objectID: Mongo.ObjectID = getID();
+
+                orders.update
+                    (
+                        {
+                            "_id": objectID    //wählt das Document in der DB aus, welches verändert werden soll
+                        },
+                        {
+                            $set:
+                            {
+                                "street": "sent"   //verändert den Wert von street
+                            }
+                        }
+                    );
+            }
+
+            function getID(): Mongo.ObjectID {
                 let query: ParsedUrlQuery = url.query;
                 let id: string = <string>query["id"];   //wählt den richtigen Teil der query aus
                 console.log(id);
 
                 let objectID: Mongo.ObjectID = new Mongo.ObjectID(id);
-                let jsonString: string = JSON.stringify( await orders.deleteOne( { "_id" : objectID } ));  
-
-                _response.write(jsonString);
-                
-            } 
-
-            if (url.pathname == "/deleteAll") { 
-
-                orders.drop();
-                
+                return objectID;
             }
 
-            if (url.pathname == "/edit") {
-
-                let query: ParsedUrlQuery = url.query;
-                let id: string = <string>query["id"];
-                console.log(id);
-
-                let objectID: Mongo.ObjectID = new Mongo.ObjectID(id);
-
-                orders.update
-                    (
-                        {
-                            "_id" : objectID    //wählt das Document in der DB aus, welches verändert werden soll
-                        },
-                        {
-                            $set :
-                            {
-                                "street" : "sent"   //verändert den Wert von street
-                            }
-                        }
-                    );
-            }
-            
         }
 
         _response.end();
-        
+
     }
 
-   
+
 }

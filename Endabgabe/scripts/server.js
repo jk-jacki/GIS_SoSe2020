@@ -49,10 +49,7 @@ var Endabgabe;
                 _response.write(jsonString);
             }
             if (url.pathname == "/deleteOne") {
-                let query = url.query;
-                let id = query["id"]; //wählt den richtigen Teil der query aus
-                console.log(id);
-                let objectID = new Mongo.ObjectID(id);
+                let objectID = getID();
                 let jsonString = JSON.stringify(await orders.deleteOne({ "_id": objectID }));
                 _response.write(jsonString);
             }
@@ -60,10 +57,7 @@ var Endabgabe;
                 orders.drop();
             }
             if (url.pathname == "/edit") {
-                let query = url.query;
-                let id = query["id"];
-                console.log(id);
-                let objectID = new Mongo.ObjectID(id);
+                let objectID = getID();
                 orders.update({
                     "_id": objectID //wählt das Document in der DB aus, welches verändert werden soll
                 }, {
@@ -71,6 +65,13 @@ var Endabgabe;
                         "street": "sent" //verändert den Wert von street
                     }
                 });
+            }
+            function getID() {
+                let query = url.query;
+                let id = query["id"]; //wählt den richtigen Teil der query aus
+                console.log(id);
+                let objectID = new Mongo.ObjectID(id);
+                return objectID;
             }
         }
         _response.end();

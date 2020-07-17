@@ -31,7 +31,7 @@ namespace Endabgabe {
     }
     ////#endregion
 
-    
+
 
     //#region Übergang von Step 1 zu Step 2
     let waffel: HTMLDivElement = <HTMLDivElement>document.getElementById("chooseWaffel");
@@ -93,7 +93,7 @@ namespace Endabgabe {
 
         //Local Storage
         localStorage.setItem("Kugel" + kugelCounter, kugelIndex.toString());
-        
+
         if (kugelCounter == 1) {
             let weiterButton: HTMLButtonElement = document.createElement("button");
             document.getElementById("eissortenDiv")!.appendChild(weiterButton);
@@ -101,7 +101,7 @@ namespace Endabgabe {
             weiterButton.setAttribute("class", "skipButton");
             weiterButton.addEventListener("click", stepTwoToThree);
         }
-        else if (kugelCounter == 4) {
+        else if (kugelCounter == 4) {   //Mehr als 4 Kugeln können nicht ausgewählt werden
             stepTwoToThree();
         }
 
@@ -155,7 +155,7 @@ namespace Endabgabe {
 
         //Local Storage
         localStorage.setItem("Soße", soßenIndex.toString());
-        
+
         stepThreeToFour();
     }
 
@@ -191,7 +191,7 @@ namespace Endabgabe {
             extra.setAttribute("id", "sahne" + kugelCounter);
         }
         else {
-            extra.setAttribute("id", "streußel" + kugelCounter);   
+            extra.setAttribute("id", "streußel" + kugelCounter);
         }
         bestellAnzeige.appendChild(extra);
 
@@ -211,12 +211,12 @@ namespace Endabgabe {
         document.getElementById("stepFour")!.style.color = "#DEC3E1";
         document.getElementById("extrasDiv")!.style.display = "none";
         document.getElementById("formDiv")!.style.display = "contents";
-        
+
         //Gesamtpreis ausgeben
-        let gesamtPreisAusgabe: string  = gesamtPreis.toFixed(2);
+        let gesamtPreisAusgabe: string = gesamtPreis.toFixed(2);
         document.getElementById("preisAnzeige")!.innerHTML = "Ihr Gesamtpreis beträgt: " + gesamtPreisAusgabe + "€";
     }
-    
+
     //#endregion
 
 
@@ -227,13 +227,13 @@ namespace Endabgabe {
         localStorage.clear();
 
         //durchläuft die Bestellanzeige und löscht die Elemente der LiveAnzeige
-        while (bestellAnzeige.hasChildNodes()) { 
+        while (bestellAnzeige.hasChildNodes()) {
             bestellAnzeige.removeChild(<Node>bestellAnzeige.firstChild);
         }
 
         //entfernt weiter-Button, der über TS generiert wird, bei den eissorten
         document.getElementById("eissortenDiv")?.removeChild(<Node>document.getElementById("eissortenDiv")?.lastChild);
-        
+
         //Erste Seite wieder anzeigen
         document.getElementById("stepOne")!.style.color = "#BBD5F2";
         document.getElementById("stepFive")!.style.color = "#DEC3E1";

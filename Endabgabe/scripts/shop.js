@@ -81,7 +81,7 @@ var Endabgabe;
             weiterButton.setAttribute("class", "skipButton");
             weiterButton.addEventListener("click", stepTwoToThree);
         }
-        else if (kugelCounter == 4) {
+        else if (kugelCounter == 4) { //Mehr als 4 Kugeln können nicht ausgewählt werden
             stepTwoToThree();
         }
     }
