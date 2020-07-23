@@ -58,6 +58,7 @@ var Endabgabe;
             }
             if (url.pathname == "/edit") {
                 let objectID = getID();
+                //https://www.guru99.com/mongodb-update-document.html
                 orders.update({
                     "_id": objectID //wählt das Document in der DB aus, welches verändert werden soll
                 }, {
@@ -67,6 +68,7 @@ var Endabgabe;
                 });
             }
             function getID() {
+                //https://github.com/Plagiatus/GIS_SoSe2020/blob/master/Aufgabe11/Server/database.ts#L29
                 let query = url.query;
                 let id = query["id"]; //wählt den richtigen Teil der query aus
                 console.log(id);

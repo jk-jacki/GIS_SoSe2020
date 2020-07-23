@@ -93,6 +93,7 @@ export namespace Endabgabe {
 
                 let objectID: Mongo.ObjectID = getID();
 
+                //https://www.guru99.com/mongodb-update-document.html
                 orders.update
                     (
                         {
@@ -108,6 +109,7 @@ export namespace Endabgabe {
             }
 
             function getID(): Mongo.ObjectID {
+                //https://github.com/Plagiatus/GIS_SoSe2020/blob/master/Aufgabe11/Server/database.ts#L29
                 let query: ParsedUrlQuery = url.query;
                 let id: string = <string>query["id"];   //wählt den richtigen Teil der query aus
                 console.log(id);
